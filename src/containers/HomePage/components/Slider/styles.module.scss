@@ -1,0 +1,611 @@
+.team {
+  position: relative;
+  height: 100vh;
+  // background-color: rgba(13, 75, 158, 1);
+  // background-color: #225cbf;
+  padding: 10.417vw 0 0 0;
+  overflow: hidden;
+
+  .teamBackground {
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .slider {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 60%;
+    transform: translateY(-44%);
+    z-index: 2;
+
+    .sliderWrapper {
+      width: 100%;
+      height: 34.896vw;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      #c1 {
+        position: absolute;
+        width: 100%;
+        height: 70%;
+        z-index: 10;
+        // background-color: #ff66c472;
+        touch-action: manipulation;
+        // &.touch{
+        //   touch-action: none
+        // }
+      }
+
+      .slide {
+        position: absolute;
+        width: 18.229vw;
+        height: auto;
+        z-index: 2;
+        left: 7%;
+        width: 0;
+        opacity: 0;
+        transition: all 1s;
+
+        &.active {
+          width: 18.229vw;
+          left: 68.1%;
+          opacity: 1;
+        }
+
+        &.center {
+          opacity: 0.8;
+          left: 35%;
+          width: 12.917vw;
+          right: auto;
+          filter: blur(0.156vw);
+        }
+
+        &.left {
+          opacity: 0.6;
+          left: 11%;
+          width: 8.021vw;
+          right: auto;
+          filter: blur(0.26vw);
+        }
+
+        &.none {
+          left: 83%;
+          // left: 50%;
+          transform: translateY(-180%);
+          width: 0vw;
+          opacity: 0;
+          filter: blur(0.26vw);
+        }
+
+        &.noneReverse {
+          left: 11%;
+          width: 0;
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .capsule {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -39%);
+    width: 27.604vw;
+    height: 36.094vw;
+
+    video {
+      position: absolute;
+      left: 50%;
+      top: 48%;
+      transform: translate(-50%, -50%);
+      width: 13.958vw;
+      height: 30.208vw;
+    }
+
+    &::before {
+      position: absolute;
+      left: 50%;
+      top: 48%;
+      content: "";
+      width: 15.833vw;
+      height: 30.313vw;
+      transform: translate(-50%, -50%);
+      background-image: url(/assets/img/home-page/team/blur-video.png);
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 1;
+    }
+
+    &::after {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      content: "";
+      width: 27.604vw;
+      height: 36.094vw;
+      transform: translate(-48%, -50%);
+      background-image: url(/assets/img/home-page/team/capsule.png);
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 1;
+    }
+  }
+
+  .teamContainer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+
+    .teamTitle {
+      font-family: "Wild World";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 3.542vw;
+      line-height: 3.542vw;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    .rightBlock {
+      display: flex;
+      flex-direction: column;
+      margin: 1.563vw 0 0 0;
+      position: relative;
+      z-index: 3;
+
+      .buttonContainer {
+        display: flex;
+        align-items: center;
+        gap: 0.521vw;
+
+        .button {
+          width: 4.167vw;
+          height: 1.771vw;
+          border: 0.052vw solid #ffffff;
+          border-radius: 0.417vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: none;
+          transition: 0.3s background, .3s border, .3s opacity;
+          cursor: pointer;
+
+          &.active {
+            opacity: 0.2;
+            border: 0.052vw solid #ffffff;
+            cursor: auto;
+
+            &:not([disabled]):hover {
+              background: none;
+              border: 0.052vw solid #ffffff;
+              cursor: auto;
+            }
+          }
+
+          &:hover {
+            background: #ff66c4;
+            border: 0.052vw solid #ff66c4;
+          }
+
+          img {
+            width: 2.917vw;
+            height: auto;
+            transition: all 0.3s;
+          }
+
+          &:last-child {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      span {
+        margin: 7.813vw 0 0 0;
+        font-family: "Wild World";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.667vw;
+        line-height: 1.667vw;
+        color: #ffffff;
+      }
+
+      strong {
+        margin: 0.26vw 0 0 0;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1.146vw;
+        line-height: 1.406vw;
+        color: #ff66c4;
+        letter-spacing: -0.02em;
+      }
+
+      p {
+        margin: 1.146vw 0 0 0;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.938vw;
+        line-height: 1.354vw;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+        opacity: 0.6;
+        width: 22.917vw;
+      }
+
+      .social {
+        margin: 1.823vw 0 0 0;
+        display: flex;
+        gap: 0.781vw;
+
+        a {
+          width: 2.396vw;
+          height: 2.396vw;
+          border-radius: 50%;
+
+          svg {
+            fill: white;
+            width: 100%;
+            height: auto;
+            transition: .3s fill;
+
+            path {
+              transition: .3s fill;
+            }
+          }
+
+          &:hover {
+            svg {
+              fill: #ff66c4;
+
+              path {
+                fill: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .team {
+    padding: 0;
+    .teamBackground {
+      left: -6.641vw;
+      top: -4.492vw;
+      width: 112%;
+      height: 112%;
+    }
+    .slider {
+      .sliderWrapper {
+        height: 43.945vw;
+        #c1 {
+          height: 70%;
+        }
+        .slide {
+          width: 34.18vw;
+          &.active {
+            width: 28.027vw;
+            left: 59.4%;
+          }
+          &.center {
+            width: 19.824vw;
+            left: 9%;
+          }
+          &.left {
+            opacity: 0;
+            left: 9%;
+            width: 0;
+          }
+        }
+      }
+    }
+    .capsule {
+      width: 42.442vw;
+      height: 55.5vw;
+      video {
+        width: 21.462vw;
+        height: 46.45vw;
+      }
+      &::before {
+        width: 24.265vw;
+        height: 43.247vw;
+      }
+      &::after {
+        width: 42.442vw;
+        height: 55.5vw;
+      }
+    }
+    .teamContainer {
+      top: 16%;
+      .teamTitle {
+        font-size: 4.688vw;
+        line-height: 6.641vw;
+      }
+      .rightBlock {
+        margin: 6.738vw 0 0 0;
+        .buttonContainer {
+          gap: 0.977vw;
+          .button {
+            width: 6.445vw;
+            height: 2.734vw;
+            border: 1px solid #ffffff;
+            border-radius: 0.641vw;
+            &.active {
+              border: 1px solid #ffffff;
+            }
+            &:hover {
+              border: 1px solid #ff66c4;
+            }
+            img {
+              width: 4.512vw;
+            }
+          }
+        }
+        span {
+          margin: 8.398vw 0 0 0;
+          font-size: 2.539vw;
+          line-height: 2.93vw;
+        }
+        strong {
+          margin: 0.88vw 0 0 0;
+          font-size: 1.758vw;
+          line-height: 2.148vw;
+          letter-spacing: -0.03em;
+        }
+        p {
+          margin: 2.563vw 0 0 0;
+          font-size: 1.563vw;
+          line-height: 2.344vw;
+          width: 28.125vw;
+        }
+        .social {
+          margin: 2.734vw 0 0 0;
+          gap: 1.172vw;
+          a {
+            width: 3.906vw;
+            height: 3.906vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:860px) {
+  .team {
+    padding: 0;
+    .teamBackground {
+      left: -6.902vw;
+      top: -4.557vw;
+    }
+    .slider {
+      width: 50%;
+      .sliderWrapper {
+        height: 58.593vw;
+        .slide {
+          width: 45.573vw;
+          top: 11.589vw;
+          &.active {
+            width: 37.369vw;
+            left: 28.4%;
+          }
+          &.center {
+            opacity: 0;
+            width: 0;
+            left: -50%;
+            top: 50%;
+          }
+          &.none {
+            transform: translateY(-110%);
+            left: 65%;
+          }
+        }
+      }
+    }
+    .capsule {
+      width: 56.589vw;
+      height: 74vw;
+      transform: translate(-79%, -38%);
+      video {
+        width: 28.616vw;
+        height: 61.933vw;
+      }
+      &::before {
+        width: 32.353vw;
+        height: 57.663vw;
+      }
+      &::after {
+        width: 56.589vw;
+        height: 74vw;
+      }
+    }
+    .teamContainer {
+      top: 14%;
+      .teamTitle {
+        font-size: 6.251vw;
+        line-height: 8.855vw;
+      }
+      .rightBlock {
+        margin: 26vw 0 0 0;
+        .buttonContainer {
+          gap: 1.303vw;
+          .button {
+            width: 8.593vw;
+            height: 3.645vw;
+            border: 0.131vw solid #ffffff;
+            border-radius: 0.855vw;
+            &.active {
+              border: 1px solid #ffffff;
+            }
+            &:hover {
+              border: 1px solid #ff66c4;
+            }
+            img {
+              width: 6.016vw;
+            }
+          }
+        }
+        span {
+          margin: 13.197vw 0 0 0;
+          font-size: 3.385vw;
+          line-height: 3.907vw;
+        }
+        strong {
+          margin: 0.651vw 0 0 0;
+          font-size: 2.864vw;
+          line-height: 2.865vw;
+          letter-spacing: -0.03em;
+        }
+        p {
+          margin: 3.084vw 0 0 0;
+          font-size: 2.083vw;
+          line-height: 3.125vw;
+          width: 37.5vw;
+        }
+        .social {
+          margin: 3.645vw 0 0 0;
+          gap: 1.563vw;
+          a {
+            width: 5.208vw;
+            height: 5.208vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .team {
+    padding: 0;
+    height: 177.6vw;
+    .teamBackground {
+      left: -7.468vw;
+      top: -18.133vw;
+    }
+    .slider {
+      width: 46%;
+      .sliderWrapper {
+        height: 77.333vw;
+        align-items: flex-start;
+        width: 100%;
+
+        #c1 {
+          width: 100%;
+          height: 103%;
+        }
+        .slide {
+          width: 52.016vw;
+          top: 12.533vw;
+          &.active {
+            width: 52.016vw;
+            left: 1%;
+          }
+          &.center {
+            opacity: 0;
+            width: 0;
+            left: -50%;
+            top: 50%;
+          }
+          &.none {
+            transform: translateY(-60%);
+            left: 55%;
+          }
+        }
+      }
+    }
+    .capsule {
+      width: 78.768vw;
+      height: 103.003vw;
+      transform: translate(-79%, -39%);
+      video {
+        width: 39.829vw;
+        height: 86.208vw;
+      }
+      &::before {
+        width: 45.032vw;
+        height: 80.261vw;
+      }
+      &::after {
+        width: 78.768vw;
+        height: 103.003vw;
+      }
+    }
+    .teamContainer {
+      top: 17.2%;
+      justify-content: end;
+      .teamTitle {
+        position: absolute;
+        left: 0;
+        top: -11.2vw;
+        font-size: 10.133vw;
+        line-height: 15.467vw;
+        width: 100%;
+        margin: 0;
+      }
+      .rightBlock {
+        flex-direction: column;
+        margin: 24vw 0 0 0;
+        align-items: flex-end;
+        width: 41.867vw;
+        .buttonContainer {
+          gap: 2.668vw;
+          margin: 0 auto 0 0;
+          .button {
+            width: 15.733vw;
+            height: 6.667vw;
+            border: 1px solid #ffffff;
+            border-radius: 1.75vw;
+            &.active {
+              border: 1px solid #ffffff;
+            }
+            &:hover {
+              border: 1px solid #ff66c4;
+            }
+            img {
+              width: 12.321vw;
+            }
+          }
+        }
+        span {
+          margin: 9.333vw auto 0 0;
+          font-size: 5.867vw;
+          line-height: 7.467vw;
+        }
+        strong {
+          margin: 2.133vw auto 0 0;
+          font-size: 5.333vw;
+          line-height: 5.067vw;
+          letter-spacing: -0.02em;
+        }
+        p {
+          margin: 5.067vw auto 0 0;
+          font-size: 4vw;
+          line-height: 5.333vw;
+        }
+        .social {
+          margin: 5.867vw auto 0 0;
+          gap: 3.2vw;
+          a {
+            width: 9.6vw;
+            height: 9.6vw;
+          }
+        }
+      }
+    }
+  }
+}

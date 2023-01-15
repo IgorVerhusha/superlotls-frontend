@@ -1,0 +1,328 @@
+@keyframes bubbles1 {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  100% {
+    top: -10%;
+    opacity: 0.4;
+  }
+}
+
+@keyframes top-arrow {
+  0% {
+    top: -12%;
+  }
+  50% {
+    top: -11%;
+  }
+  100% {
+    top: -12%;
+  }
+}
+
+
+@keyframes left-arrow {
+  0% {
+    left: -6%;
+  }
+  50% {
+    left: -5%;
+  }
+  100% {
+    left: -6%;
+  }
+}
+
+.beginning {
+  position: relative;
+  height: 156.25vw;
+  width: 100%;
+  z-index: 9;
+  // opacity: 0.5;
+  // transition: 1s opacity;
+  // &.active {
+  //   opacity: 1;
+  // }
+  .waterBlur {
+    z-index: 3;
+    position: absolute;
+    top: -4%;
+    left: 0;
+    width: 100%;
+  }
+
+  .beginningWrapper {
+    position: sticky;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    z-index: 11;
+    .beginningBlur{
+      display: none;
+    }
+
+    .beginningContainer {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+      .beginningBackground {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 0;
+        transition: 0.2s transform;
+      }
+    }
+  }
+
+  .bubbles1 {
+    position: absolute;
+    width: 2.552vw;
+    height: auto;
+    left: 8.65%;
+    top: 60%;
+    z-index: 2;
+    opacity: 0;
+
+    &.active {
+      animation: 1.5s bubbles1 linear;
+    }
+  }
+
+  .bubbles2 {
+    position: absolute;
+    opacity: 0;
+    width: 3.958vw;
+    height: auto;
+    left: 47%;
+    top: 60%;
+
+    &.active {
+      animation: 1.5s bubbles1 linear;
+    }
+  }
+
+  .bubbles3 {
+    position: absolute;
+    opacity: 0;
+    width: 2.344vw;
+    height: auto;
+    left: 76%;
+    top: 53%;
+
+    &.active {
+      animation: 1.5s bubbles1 linear;
+    }
+  }
+
+  .bubbles4 {
+    position: absolute;
+    opacity: 0;
+    width: 2.448vw;
+    height: auto;
+    left: 90%;
+    top: 70%;
+
+    &.active {
+      animation: 2s bubbles1 linear;
+    }
+  }
+
+  .beginning__container {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.3s opacity;
+
+    &.remove {
+      opacity: 0 !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .beginning {
+    height: auto;
+    .beginningWrapper {
+      position: relative;
+      .beginningBlur {
+        display: block;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        transform: rotate(180deg);
+      }
+    }
+
+    .bubbles1 {
+      width: 4.785vw;
+    }
+
+    .bubbles2 {
+      width: 7.422vw;
+    }
+
+    .bubbles3 {
+      width: 4.395vw;
+    }
+
+    .bubbles4 {
+      width: 4.59vw;
+    }
+
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .beginning {
+    .beginningWrapper {
+      .beginningBlur {
+        z-index: 6;
+      }
+    }
+    .beginningContainer {
+      position: relative;
+    }
+
+    .water-blur {
+      top: -13%;
+    }
+
+    .bubbles1 {
+      width: 6.38vw;
+    }
+
+    .bubbles2 {
+      width: 9.896vw;
+    }
+
+    .bubbles3 {
+      width: 5.86vw;
+    }
+
+    .bubbles4 {
+      width: 6.12vw;
+    }
+
+    .beginning__container {
+      transform: translateY(-24%);
+      flex-direction: column-reverse;
+      position: static;
+      align-items: center;
+      &::before {
+        content: "";
+        position: absolute;
+        right: auto;
+        left: 19.271vw;
+        top: 31.25vw;
+        bottom: auto;
+        height: 1.041vw;
+        width: 1.041vw;
+        border-left: 0.26vw solid #ffffff;
+        border-bottom: 0.26vw solid #ffffff;
+        transform: translateY(0) rotate(-45deg);
+        animation: 1.5s begining-arrow768 linear infinite;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        right: 19.531vw;
+        left: auto;
+        top: 31.25vw;
+        bottom: auto;
+        height: 1.041vw;
+        width: 1.041vw;
+        border-left: 0.26vw solid #ffffff;
+        border-bottom: 0.26vw solid #ffffff;
+        transform: translateY(0) rotate(-45deg);
+        animation: 1.5s begining-arrow768 linear infinite;
+      }
+
+    }
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .beginning {
+    width: 100%;
+    height: auto;
+    z-index: 0;
+
+    .waterBlur {
+      display: none;
+    }
+
+    .bubbles1 {
+      width: 13.066vw;
+    }
+
+    .bubbles2 {
+      width: 20.267vw;
+    }
+
+    .bubbles3 {
+      width: 12.001vw;
+    }
+
+    .bubbles4 {
+      width: 12.534vw;
+    }
+
+    .beginningWrapper {
+      height: auto;
+
+      .beginningBlur {
+        height: 81.333vw;
+        object-fit: cover;
+      }
+
+      .beginningContainer {
+        height: 256.8vw;
+        display: block;
+
+        .beginningBackground {
+          top: auto;
+          bottom: 0;
+        }
+      }
+    }
+
+    .beginning__container {
+      height: auto;
+      transform: translateY(0);
+      align-items: flex-start;
+      &::before {
+        left: 3.6vw;
+        top: 60vw;
+        height: 2.133vw;
+        width: 2.133vw;
+        border-left: 0.26vw solid #ffffff;
+        border-bottom: 0.26vw solid #ffffff;
+      }
+      &::after {
+        right: 3.6vw;
+        top: 60vw;
+        height: 2.133vw;
+        width: 2.133vw;
+        border-left: 0.26vw solid #ffffff;
+        border-bottom: 0.26vw solid #ffffff;
+      }
+    }
+  }
+}

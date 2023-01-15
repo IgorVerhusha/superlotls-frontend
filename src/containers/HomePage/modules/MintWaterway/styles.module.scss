@@ -1,0 +1,1152 @@
+@keyframes bubbles-waterway {
+  0% {
+    margin: 0;
+  }
+  50% {
+    margin: -2% 0 0 0;
+  }
+  100% {
+    margin: 0;
+  }
+}
+
+.mintWaterway {
+  width: 100%;
+  height: 416.667vw;
+  display: flex;
+  position: relative;
+
+  .mintWaterwayWrap {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    transition: 1s transform;
+    background: steelblue;
+    position: sticky;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+    &.active {
+      .mintTest {
+        transform: translateX(-100vw);
+      }
+
+      // #mint {
+      //   transform: translateX(-1920px);
+      // }
+    }
+  }
+}
+
+
+
+.mint {
+  background-color: #03010d;
+  // position: sticky;
+  // top: 0;
+  // left: 0;
+  display: flex;
+  flex: none;
+  width: 100vw;
+  height: 100vh;
+  padding: 10.781vw 0 11.615vw 0;
+  overflow: hidden;
+  // transition: 1s transform;
+  z-index: 9;
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  img.bg,
+  img.crocodile {
+    position: absolute;
+  }
+
+  img.bg {
+    top: -10.938vw;
+    left: 7.969vw;
+    width: 56.042vw;
+    height: auto;
+    z-index: -1;
+  }
+
+  .animeCircle {
+    position: absolute;
+    top: -3.75vw;
+    left: 36.948vw;
+    width: 43.021vw;
+    height: 43.021vw;
+    z-index: -2;
+
+    .wrapperCircle {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      .circleAnime {
+        width: 100%;
+        height: 100%;
+      }
+
+      .circleBlur {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+}
+.mainTitle {
+  display: block;
+  font-size: 3.542vw;
+  line-height: calc(88 / 68);
+  font-family: "Wild World";
+  color: #fff;
+  margin: 0 0 3.281vw 0;
+}
+
+.mainTextContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 4.167vw 0;
+  gap: 1.563vw;
+  width: 26.042vw;
+}
+
+.mainText {
+  display: block;
+  font-size: 0.938vw;
+  line-height: calc(42 / 30);
+  font-family: "Inter";
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.btn {
+  display: inline-flex;
+  font-size: 1.042vw;
+  font-weight: 700;
+  line-height: calc(29.64 / 20);
+  letter-spacing: 0.02em;
+  font-family: "Inter";
+  padding: 1.146vw 1.042vw;
+  justify-content: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #fff;
+  color: #07031f;
+  position: relative;
+  border-radius: 0.417vw;
+  border: none;
+  overflow: hidden;
+  transition: 0.3s background-color, 0.3s color;
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 3.411vw;
+    height: 1.146vw;
+    background-image: url(/assets/img/home-page/mint/btn-stripes.svg);
+    background-size: 3.411vw auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  &::before {
+    left: 0;
+  }
+  &::after {
+    right: 0;
+  }
+  &:hover {
+    background-color: #ff4cbd;
+    color: #fff;
+    img {
+      filter: hue-rotate(100deg);
+    }
+  }
+}
+
+.btn {
+  width: 12.917vw;
+  transition: 0.3s border-radius, 0.3s background, 0.3s color;
+  &:hover {
+    border-radius: 0.938vw;
+  }
+}
+
+.waterwayMaintitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 0.938vw;
+  line-height: 1.458vw;
+  letter-spacing: -0.02em;
+  font-family: "Inter";
+  padding: 0 0.833vw;
+  height: 2.292vw;
+  border-width: 0vw 1px;
+  border-style: solid;
+  border-color: #ff4cbd;
+  border-radius: 0.417vw;
+  color: #fff;
+  margin: 0.781vw 0 -1.302vw 0;
+}
+
+.mintTest {
+  display: flex;
+  width: 200vw;
+}
+
+
+.waterway {
+  margin-left: -0.052vw;
+  background: none;
+  position: relative;
+  flex: none;
+  width: 100vw;
+  height: 100%;
+  margin-left: -0.052vw;
+  transition: 1s background-size, 1s background-position;
+
+  .mintWaterwayBlur{
+    display: none;
+  }
+
+  .waterwayBg {
+    position: absolute;
+    left: 0vw;
+    top: 0vw;
+    z-index: -1;
+    min-height: 100%;
+    width: auto;
+    object-fit: cover;
+    transition: all 1s;
+  }
+
+  .waterwayBlur {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 5;
+    opacity: 0;
+    height: 17.708vw;
+    transition: 1s opacity;
+  }
+
+  .waterwayBubble {
+    width: 16.406vw;
+    height: 16.406vw;
+    position: absolute;
+    top: 4.688vw;
+    left: 32.292vw;
+    transition: 1s all;
+    z-index: -1;
+    animation: 4s bubbles-waterway ease-in-out infinite;
+
+    .bubbleContainer {
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      .bubble {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        width: 16.406vw;
+        height: auto;
+        z-index: 1;
+      }
+
+      .axolots {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 13.102vw;
+        opacity: 0;
+        transition: 0.5s opacity;
+      }
+    }
+  }
+
+  &.first {
+    .waterwayBg {
+      width: 178.646vw;
+      left: 0;
+      top: -2.969vw;
+      min-height: 105%;
+    }
+
+    .waterwayBubble {
+      transform: scale(1) translate(0, 0);
+      top: 4.688vw;
+      left: 32.292vw;
+      .img1 {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.second {
+    .waterwayBg {
+      width: 248.281vw;
+      top: 0vw;
+      left: -44.479vw;
+    }
+
+    .waterwayBubble {
+      transform: scale(1.25) translate(1.979vw, 3.021vw);
+      .img2 {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.third {
+    .waterwayBg {
+      width: 192.5vw;
+      top: 0;
+      left: -51.771vw;
+    }
+
+    .waterwayBlur {
+      opacity: 1;
+    }
+
+    .waterwayBubble {
+      transform: scale(1.6) translate(2.917vw, 3.646vw);
+      .img3 {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.four {
+    .waterwayBg {
+      width: 219.479vw;
+      top: -10vw;
+      left: -118.958vw;
+      min-height: 116%;
+    }
+
+    .waterwayBlur {
+      opacity: 1;
+    }
+
+    .waterwayBubble {
+      transform: scale(1.95) translate(2.396vw, 4.531vw);
+      .img4 {
+        opacity: 1;
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: url(/assets/img/waterway-fade.svg);
+      background-size: 153.646vw auto;
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 153.646vw;
+      height: 23.281vw;
+      bottom: -11.667vw;
+      left: 50%;
+      transform: translate(-50%, 0);
+      display: none;
+    }
+  }
+
+  .waterwayTabs {
+    margin: 6.667vw 0 0 0;
+    width: 23.438vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.188vw;
+    z-index: 6;
+
+    a {
+      font-size: 1.667vw;
+      line-height: 1;
+      font-family: "Wild World";
+      font-weight: 500;
+      color: #fff;
+      text-decoration: none;
+      opacity: 0.3;
+      transition: .55s font-size, 0.3s opacity;
+      outline: none;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+      }
+      &.active {
+        font-size: 3.542vw;
+        opacity: 1;
+      }
+    }
+  }
+
+  .waterwayTexts {
+    width: 22.917vw;
+    height: 100vh;
+    overflow-y: hidden;
+    color: #fff;
+    z-index: 6;
+    .hiddenText {
+      display: none;
+    }
+    .textAccent {
+      color: #ff4cbd;
+    }
+
+    .waterwayText1,
+    .waterwayText2,
+    .waterwayText3,
+    .waterwayText4 {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .hidden-title {
+        display: none;
+      }
+    }
+
+    .waterwayTitle {
+      font-weight: 700;
+      font-size: 1.823vw;
+      line-height: 2.344vw;
+      letter-spacing: -0.02em;
+      font-family: "Inter";
+      margin: 0 0 2.625vw 0;
+    }
+
+    p {
+      display: block;
+      font-size: 1.563vw;
+      line-height: calc(40 / 30);
+      font-family: "Oswald";
+      font-weight: 400;
+      color: #fff;
+      margin: 1.823vw 0 0 0;
+    }
+
+    ul {
+      counter-reset: test;
+      display: flex;
+      flex-direction: column;
+      gap: 1.354vw;
+      li {
+        font-family: "Inter";
+        font-weight: 400;
+        font-size: 0.938vw;
+        line-height: 1.354vw;
+        letter-spacing: -0.02em;
+        display: flex;
+        gap: 0.521vw;
+        &::before {
+          counter-increment: test;
+          content: "0" counter(test);
+          display: block;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 0.625vw;
+          line-height: 180%;
+          letter-spacing: -0.02em;
+          color: #ff66c4;
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: #ff66c4;
+      display: contents;
+    }
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .mintWaterway {
+    height: auto;
+    width: 100%;
+
+    .mintWaterwayWrap {
+      position: static;
+      height: auto;
+    }
+  }
+
+  .mintTest {
+    flex-direction: column;
+    width: auto;
+  }
+
+  .mint {
+    padding: 0;
+    img.bg {
+      top: 9.25vw;
+      left: 18.75vw;
+      width: 66vw;
+    }
+    .container {
+      width: 92vw;
+      .btn {
+        width: 17.578vw;
+        height: 5.859vw;
+        font-size: 1.563vw;
+        line-height: 1.758vw;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        border-radius: 0.781vw;
+        &::before,
+        &::after {
+          width: 2.979vw;
+        }
+      }
+    }
+    .mainTitle {
+      font-size: 4.688vw;
+      line-height: calc(68 / 48);
+      margin: 13.184vw 0 3.809vw 0;
+    }
+    .mainTextContainer {
+      width: 36.719vw;
+      gap: 2.45vw;
+      margin: 0 0 4.688vw 0;
+    }
+    .mainText {
+      font-size: 1.563vw;
+      line-height: 2.344vw;
+      br {
+        display: none;
+      }
+    }
+    .animeCircle {
+      top: 11.047vw;
+      left: 43.5vw;
+      width: 67vw;
+      .wrapper-circle {
+        .character {
+          width: 49.5vw;
+        }
+      }
+    }
+  }
+  .waterway {
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    .mintWaterwayBlur {
+      display: block;
+      width: 100%;
+      height: 33.887vw;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    .waterwayBg {
+      z-index: 0;
+    }
+    .waterwayBlur {
+      opacity: 1;
+    }
+    &.first {
+      .waterwayBg {
+        width: 426.646vw;
+        left: 0;
+        top: -25.969vw;
+        min-height: 105%;
+      }
+      .waterwayBubble {
+        transform: none;
+      }
+    }
+    &.second {
+      .waterwayBg {
+        width: 468vw;
+        top: 0;
+        left: -107.479vw;
+      }
+      .waterwayBubble {
+        transform: none;
+      }
+    }
+    &.third {
+      .waterwayBg {
+        width: 360vw;
+        top: 0;
+        left: -124vw;
+      }
+      .waterwayBubble {
+        transform: none;
+      }
+    }
+    &.four {
+      .waterwayBg {
+        width: 390vw;
+        top: -10vw;
+        left: -220.958vw;
+        min-height: 116%;
+      }
+      .waterwayBubble {
+        transform: none;
+      }
+    }
+    .waterwayTabs {
+      width: 34vw;
+      gap: 2.54vw;
+      a {
+        font-size: 2.344vw;
+        &.active {
+          font-size: 4.688vw;
+        }
+      }
+    }
+    .waterwayTexts {
+      width: 44.141vw;
+      .waterwayTitle {
+        font-size: 3.418vw;
+        line-height: 4.395vw;
+        margin: 0 0 3.906vw 0;
+      }
+      p {
+        font-size: 2.344vw;
+        line-height: calc(34 / 24);
+        margin-top: 0.977vw;
+      }
+      ul {
+        gap: 2.354vw;
+        li {
+          font-size: 1.563vw;
+          line-height: 2.344vw;
+          gap: 0.977vw;
+          &::before {
+            font-size: 0.977vw;
+            line-height: 1.953vw;
+          }
+        }
+      }
+      a {
+        width: 11.6vw;
+        height: 2.8vw;
+      }
+    }
+    .waterwayBubble {
+      width: 28.125vw;
+      height: 28.125vw;
+      top: 53vh;
+      left: 20.09vw;
+      .bubbleContainer {
+        .bubble {
+          width: 100%;
+        }
+        .axolots {
+          width: 19.531vw;
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    &.first {
+      .waterwayBubble {
+        top: 53vh;
+        left: 17.09vw;
+      }
+    }
+  }
+  .waterwayMaintitle {
+    font-size: 1.563vw;
+    line-height: 2.344vw;
+    padding: 0 1.563vw;
+    margin: 3.418vw 0 0 0;
+    width: auto;
+    height: 3.516vw;
+    border-radius: 0.781vw;
+    display: flex;
+    align-items: center;
+  }
+
+  .btn {
+    font-size: 1.758vw;
+    width: 21.484vw;
+    padding: 1.953vw 4.395vw;
+    margin: 0;
+    &::before,
+    &::after {
+      width: 5.273vw;
+      height: 1.563vw;
+      background-size: 5.273vw auto;
+    }
+  }
+}
+
+@media only screen and (max-width:860px) {
+  .mint {
+    align-items: center;
+    .container {
+      width: 90.5vw;
+      display: flex;
+      height: min-content;
+      flex-direction: column;
+      justify-content: center;
+      .btn {
+        margin: 6.51vw 19.401vw 0 auto;
+        width: 23.438vw;
+        height: 7.813vw;
+        border-radius: 1.042vw;
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+    .mainTitle {
+      font-size: 6.25vw;
+      line-height: calc(68/48);
+      margin: 0 0 5.208vw 0;
+    }
+    .mainText {
+      font-size: 2.083vw;
+      line-height: 3.125vw;
+      width: 100%;
+      margin: 0;
+    }
+    .mainTextContainer {
+      margin: 27.995vw 0 0 auto;
+      width: 42.708vw;
+    }
+
+    .animeCircle {
+      width: 97vw;
+      top: 36.5vw;
+      left: 12.25vw;
+      .wrapperCircle {
+        .character {
+          width: 68.5vw;
+        }
+      }
+    }
+    img.bg {
+      top: -4.75vw;
+      left: -18.25vw;
+      width: 102vw;
+    }
+    .animeCircle {
+      width: 57.5vw;
+      top: -6.5vw;
+      left: 40.25vw;
+      height: 57.5vw;
+    }
+  }
+  .waterway {
+    .waterwayTabs {
+      margin: 10.026vw 0 0 0;
+      width: 45vw;
+      gap: 3.906vw;
+      a {
+        font-size: 3.125vw;
+        &.active {
+          font-size: 6.25vw;
+        }
+      }
+    }
+    .waterwayTexts {
+      width: 42.188vw;
+      .waterwayTitle {
+        font-size: 4.557vw;
+        line-height: 5.859vw;
+        margin: 0 0 5.208vw 0;
+        br {
+          display: none;
+        }
+      }
+      ul {
+        gap: 3.255vw;
+        li {
+          font-size: 2.083vw;
+          line-height: 3.125vw;
+          gap: 1.693vw;
+          &::before {
+            font-size: 1.302vw;
+            line-height: 2.995vw;
+          }
+        }
+      }
+      p {
+        font-size: 3.125vw;
+      }
+      a {
+        width: 16.6vw;
+        height: 4vw;
+        border-radius: 1.042vw;
+      }
+    }
+    .waterwayBubble {
+      top: 63vw;
+      left: 4.5vw;
+      width: 43vw;
+      height: 43vw;
+      .bubbleContainer {
+        .bubble {
+          width: 43vw;
+        }
+        .axolots {
+          width: 35vw;
+        }
+      }
+    }
+    &.first {
+      .waterwayBg {
+        width: 427.646vw;
+        left: 0;
+        top: 0;
+        min-height: 105%;
+      }
+      .waterwayBubble {
+        top: 63vw;
+        left: 4.5vw;
+      }
+    }
+    &.second {
+      .waterwayBg {
+        width: 540.646vw;
+        left: -99vw;
+        top: 0;
+        min-height: 105%;
+      }
+      .waterwayBubble {
+        top: 63vw;
+        left: 4.5vw;
+      }
+    }
+    &.third {
+      .waterwayBg {
+        width: 440.646vw;
+        left: -150vw;
+        top: 0;
+        min-height: 105%;
+      }
+      .waterwayBubble {
+        top: 63vw;
+        left: 4.5vw;
+      }
+    }
+    &.four {
+      .waterwayBg {
+        width: 490.646vw;
+        left: -255vw;
+        top: -10vw;
+        min-height: 105%;
+      }
+      .waterwayBubble {
+        top: 63vw;
+        left: 4.5vw;
+      }
+    }
+  }
+  .waterwayMaintitle {
+    font-size: 2.083vw;
+    line-height: 3.125vw;
+    height: 4.688vw;
+    padding: 0 2.083vw;
+    border-radius: 1.042vw;
+  }
+
+  .btn {
+    font-size: 2.344vw;
+    width: 28.65vw;
+    padding: 2.7vw 6.5vw;
+    border-radius: 1.042vw;
+  }
+
+  .btn {
+    font-size: 2.344vw;
+    width: 28.65vw;
+    padding: 2.7vw 6.5vw;
+    border-radius: 1.042vw;
+    &::before,
+    &::after {
+      width: 7.031vw;
+      height: 2.083vw;
+      background-size: 7.031vw auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .mintTest {
+    width: 100vw;
+    flex-direction: column;
+  }
+
+  .mintWaterway {
+    height: auto;
+    .mintWaterwayWrap {
+      position: static;
+      height: auto;
+    }
+  }
+
+  .waterway {
+    height: auto;
+    width: 100vw;
+    background-image: url(/assets/img/home-page/waterway/waterway-bg-mob.png);
+    background-size: cover;
+    background-position: center -6.667vw;
+    background-repeat: no-repeat;
+    padding: 0 0 29.333vw 0;
+    .waterwayBg {
+      z-index: 1;
+      display: none;
+    }
+    .waterwayBlur {
+      z-index: 1;
+      width: 100%;
+      height: 75.733vw;
+      opacity: 1 !important;
+      bottom: 0;
+    }
+    .container {
+      flex-direction: column;
+      &::before {
+        content: "INK the Metaverse";
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 3.733vw;
+        line-height: 6.4vw;
+        letter-spacing: -0.02em;
+        z-index: 2;
+        color: #ffffff;
+        display: flex;
+        padding: 0 3.733vw;
+        border-radius: 2.133vw;
+        height: 9.6vw;
+        border-left: 1px solid #ff66c4;
+        border-right: 1px solid #ff66c4;
+        align-items: center;
+        margin: 29.333vw 0 0 auto;
+      }
+    }
+    .waterwayTabs {
+      display: none;
+    }
+    .waterwayTexts {
+      width: 100%;
+      height: auto;
+      position: relative;
+      z-index: 9;
+
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-position: center center;
+        z-index: -1;
+      }
+      .waterwayText1,
+      .waterwayText2,
+      .waterwayText3,
+      .waterwayText4, {
+        position: relative;
+        padding: 41.6vw 0 0 0;
+        height: auto;
+        margin: 0 0 12vw 0;
+        &::before {
+          font-family: "Wild World";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 8.533vw;
+          line-height: 15.467vw;
+          color: #ffffff;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          width: 34.667vw;
+          height: 37.333vw;
+
+          background-size: 100%;
+          top: 7.2vw;
+          right: auto;
+          left: 0;
+          animation: 4s bubbles-waterway ease-in-out infinite;
+        }
+      }
+      .waterwayText1 {
+        &::before {
+          content: "Season 1";
+        }
+        &::after {
+          background-image: url(/assets/img/home-page/waterway/bubble-mobile.png);
+        }
+      }
+      .waterwayText2 {
+        &::before {
+          content: "Expression";
+        }
+        &::after {
+          background-image: url(/assets/img/home-page/waterway/bubble-mobile2.png);
+        }
+      }
+      .waterwayText3 {
+        &::before {
+          content: "Purpose";
+        }
+        &::after {
+          background-image: url(/assets/img/home-page/waterway/bubble-mobile3.png);
+        }
+      }
+      .waterwayText4 {
+        &::before {
+          content: "Forging";
+        }
+        &::after {
+          background-image: url(/assets/img/home-page/waterway/bubble-mobile4.png);
+        }
+      }
+      .waterwayTitle {
+        font-size: 5.333vw;
+        line-height: 7.467vw;
+        margin: 1.067vw 0 6.933vw 0;
+        br {
+          display: block;
+        }
+      }
+      ul {
+        gap: 3.2vw;
+        li {
+          gap: 3.2vw;
+          font-size: 4vw;
+          line-height: 6.4vw;
+          &::before {
+            font-size: 2.667vw;
+            line-height: 5.6vw;
+          }
+          a {
+            font-size: 4vw;
+            line-height: 6.4vw;
+          }
+        }
+      }
+      p {
+        font-size: 5.333vw;
+        line-height: calc(30 / 20);
+        margin-top: 4vw;
+        letter-spacing: -0.12vw;
+        width: 100%;
+      }
+      a {
+        width: 24.6vw;
+        height: 6.8vw;
+        border-width: 0.267vw;
+        border-radius: 1.6vw;
+        font-size: 5.333vw;
+        line-height: 8vw;
+      }
+    }
+  }
+
+  .waterwayMaintitle {
+    font-size: 5.333vw;
+    padding: 1.867vw 3.2vw;
+    border-radius: 2.133vw;
+  }
+
+  .mint {
+    width: 100%;
+    height: 229.333vw;
+    .mainTextContainer {
+      margin: 85vw 0 0 0;
+      width: 100%;
+      gap: 4vw;
+    }
+    img.bg {
+      top: 8.533vw;
+      left: 0;
+      width: 252vw;
+    }
+    .animeCircle {
+      top: 42.667vw;
+      bottom: auto;
+      left: -13.75vw;
+      width: 91.2vw;
+      height: 108.533vw;
+      .wrapperCircle {
+        .character {
+          width: 98.5vw;
+        }
+      }
+    }
+    .container {
+      height: 100%;
+      margin-top: auto;
+      display: block;
+      .btn {
+        position: relative;
+        font-size: 4.267vw;
+        line-height: 4.8vw;
+        width: 48vw;
+        margin: 10.667vw 0 0 0;
+        height: 14.4vw;
+        border-radius: 2.133vw;
+        &::before,
+        &::after {
+          width: 8.267vw;
+        }
+      }
+    }
+
+    .mainTitle {
+      font-size: 10.133vw;
+      line-height: 12.8vw;
+      margin: 25.533vw 0 7.2vw 0;
+    }
+    .mainText {
+      font-size: 4vw;
+      line-height: 6.4vw;
+      letter-spacing: -0.02em;
+    }
+  }
+
+  .btn {
+    font-size: 4.8vw;
+    width: 28.65vw;
+    padding: 2.7vw 6.5vw;
+    border-radius: 2.133vw;
+    &::before,
+    &::after {
+      width: 14.4vw;
+      height: 4.267vw;
+      background-size: 14.4vw auto;
+    }
+  }
+}
