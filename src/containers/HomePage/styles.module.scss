@@ -44,9 +44,27 @@
   background-color: #0d4b9e;
 }
 
+.isLoading {
+  overflow: hidden;
+}
+
 .container {
   width: 72.917vw;
   margin: 0 auto;
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  padding: 1.823vw 2.604vw;
+  z-index: 10;
+  a {
+    .logo {
+      width: 204px;
+      height: auto;
+
+    }
+  }
 }
 
 .mainTitle {
@@ -284,6 +302,15 @@
   .container {
     width: 92.188vw;
   }
+  .header {
+    padding: 3.906vw;
+    a {
+      .logo {
+        width: 18.457vw;
+      }
+    }
+  }
+
   .btn {
     font-size: 1.758vw;
     width: 21.484vw;
@@ -378,8 +405,18 @@
 
 @media only screen and (max-width: 860px) {
   .container {
-    width: 90.5vw;
+    width: 89.583vw;
   }
+
+  .header {
+    padding: 5.208vw;
+    a {
+      .logo {
+        width: 24.609vw;
+      }
+    }
+  }
+
   .btn {
     font-size: 2.344vw;
     width: 28.65vw;
@@ -489,6 +526,15 @@
 @media only screen and (max-width: 600px) {
   .container {
     width: 89.333vw;
+  }
+
+  .header {
+    padding: 8vw 5.333vw;
+    a {
+      .logo {
+        width: 50.4vw;
+      }
+    }
   }
 
   .btn {

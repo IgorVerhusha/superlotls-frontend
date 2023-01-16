@@ -1,4 +1,4 @@
-import React, { FC, Ref, useEffect, useRef } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import mainStyles from './../../styles.module.scss';
 import styles from './styles.module.scss';
 import mintBg from 'public/assets/img/home-page/mint/mint-bg.png';
@@ -10,19 +10,53 @@ import tab2 from 'public/assets/img/home-page/waterway/tab-2.png';
 import tab3 from 'public/assets/img/home-page/waterway/tab-3.png';
 import tab4 from 'public/assets/img/home-page/waterway/tab-4.png';
 import cn from 'classnames';
+import { useWindowSize } from '@hooks/useWindowSize';
 
-type Props = {
-  mintWaterwaySection: Ref<HTMLDivElement>
-  mintTranslate: number
-  activeWaterwayTab: number
-  setActiveWaterwayTab: React.Dispatch<React.SetStateAction<number>>
-}
-
-const MintWaterway: FC<Props> = (
-  { mintWaterwaySection, mintTranslate, activeWaterwayTab, setActiveWaterwayTab }
-) => {
+const MintWaterway: FC = () => {
   const currWaterwayText = useRef<HTMLDivElement>(null);
   const waterwayText = useRef<HTMLDivElement>(null);
+  const [activeWaterwayTab, setActiveWaterwayTab] = useState(1);
+  const mintWaterwaySection = useRef<HTMLDivElement>(null);
+
+  const [mintTranslate, setMintTranslate] = useState(0);
+  const windowSize = useWindowSize();
+
+  const handleActiveWaterwayTab = (tab: number) => {
+    if (!mintWaterwaySection.current) return;
+    window.scrollTo({
+      top:
+        mintWaterwaySection.current.offsetTop +
+        (mintWaterwaySection.current.clientHeight / 6) * (tab + 1),
+    });
+    setActiveWaterwayTab(tab);
+  };
+
+  useEffect(() => {
+    if (windowSize.width && windowSize.width < 1280) return;
+    const onScroll = () => {
+      if (!mintWaterwaySection.current) return;
+      const mintScroll = (-1 * mintWaterwaySection.current.getBoundingClientRect().y / (mintWaterwaySection.current.clientHeight / 100));
+      let mintWaterwayHeight = mintWaterwaySection.current.clientHeight;
+      let mintWaterwayScroll = window.pageYOffset - mintWaterwaySection.current.offsetTop;
+      let num;
+      mintWaterwayScroll < 3 * (mintWaterwayHeight / 6) - 300 ?
+        (num = 1) :
+        mintWaterwayScroll < 4 * (mintWaterwayHeight / 6) - 300 ?
+          (num = 2) :
+          mintWaterwayScroll < 5 * (mintWaterwayHeight / 6) - 300 ?
+            (num = 3) : (num = 4);
+      setActiveWaterwayTab(num);
+      if (mintScroll < 10) {
+        setMintTranslate(0);
+      } else if (mintScroll >= 10 && mintScroll <= 30) {
+        setMintTranslate(-((mintScroll - 10) / 20) * 100);
+      } else if (mintScroll > 30) {
+        setMintTranslate(-100);
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [windowSize.width]);
 
 
   useEffect(() => {
@@ -88,27 +122,24 @@ const MintWaterway: FC<Props> = (
                   </div>
                 </div>
                 <span className={styles.waterwayMaintitle}>INK The Metaverse</span>
-                <a onClick={() => setActiveWaterwayTab(1)}
+                <a onClick={() => handleActiveWaterwayTab(1)}
                    className={cn(styles.waterwayTab, { [styles.active]: activeWaterwayTab === 1 })}>
                   Season 1
                 </a>
-                <a onClick={() => setActiveWaterwayTab(2)}
+                <a onClick={() => handleActiveWaterwayTab(2)}
                    className={cn(styles.waterwayTab, { [styles.active]: activeWaterwayTab === 2 })}>
                   Expression
                 </a>
-                <a onClick={() => setActiveWaterwayTab(3)}
+                <a onClick={() => handleActiveWaterwayTab(3)}
                    className={cn(styles.waterwayTab, { [styles.active]: activeWaterwayTab === 3 })}>
                   Purpose
                 </a>
-                <a onClick={() => setActiveWaterwayTab(4)}
+                <a onClick={() => handleActiveWaterwayTab(4)}
                    className={cn(styles.waterwayTab, { [styles.active]: activeWaterwayTab === 4 })}>
                   Forging
                 </a>
               </div>
               <div ref={waterwayText} className={styles.waterwayTexts}>
-                {/*<span className={cn(styles.hiddenTitle)}>*/}
-                {/*  <span className={cn(styles.waterwayMaintitle)}>Waterway</span>*/}
-                {/*  Season 1</span>*/}
                 <div ref={activeWaterwayTab === 1 ? currWaterwayText : null} className={styles.waterwayText1}>
                   <h4 className={styles.waterwayTitle}>
                     <span className={styles.textAccent}>5,000 Superlotls</span> Hatching<br/> Q1 2023
@@ -116,7 +147,7 @@ const MintWaterway: FC<Props> = (
                   <ul>
                     <li>Every Superlotl hatches with a unique and powerful 1/1 tattoo.</li>
                     <li>Your Superlotl&apos;s tattoo will be available for sale as an IRL design on <a
-                      href="inkbox.com">inkbox.com</a> for all to purchase. Proceeds will be donated to American
+                      href="https://inkbox.com">inkbox.com</a> for all to purchase. Proceeds will be donated to American
                       Cancer Society and is dedicated to helping cancer research. Season 2 donations will be dedicated
                       to charitable organizations decided by our community.
                     </li>
@@ -129,9 +160,6 @@ const MintWaterway: FC<Props> = (
                   </ul>
                 </div>
                 <div ref={activeWaterwayTab === 2 ? currWaterwayText : null} className={styles.waterwayText2}>
-                {/*<span className={cn(styles.hiddenTitle)}>*/}
-                {/*  <span className={cn(styles.waterwayMaintitle)}>Waterway</span>*/}
-                {/*  Season 2</span>*/}
                   <h4 className={styles.waterwayTitle}>
                     <span className={styles.textAccent}>Every tattoo has a story,</span> find out yours and unlock its
                     powers!
@@ -145,9 +173,6 @@ const MintWaterway: FC<Props> = (
                   </ul>
                 </div>
                 <div ref={activeWaterwayTab === 3 ? currWaterwayText : null} className={styles.waterwayText3}>
-                  {/*<span className={cn(styles.hiddenTitle)}>*/}
-                  {/*<span className={cn(styles.waterwayMaintitle)}>Waterway</span>*/}
-                  {/*Season 3</span>*/}
                   <h4 className={styles.waterwayTitle}>
                     <span className={styles.textAccent}>Every Superlotl hatches with a unique tattoo</span> that tells the
                     story
@@ -155,7 +180,7 @@ const MintWaterway: FC<Props> = (
                   </h4>
                   <ul>
                     <li>Your Superlotl’s 1/1 design will be available for purchase as an IRL temporary tattoo on <a
-                      href="inkbox.com">inkbox.com</a>, with
+                      href="https://inkbox.com">inkbox.com</a>, with
                       proceeds donated to charitable organizations with every sale!
                     </li>
                     <li>Season 1’s impact is dedicated to cancer research, with donations going to American Cancer
@@ -171,9 +196,6 @@ const MintWaterway: FC<Props> = (
                   </ul>
                 </div>
                 <div ref={activeWaterwayTab === 4 ? currWaterwayText : null} className={styles.waterwayText4}>
-                 {/*<span className={cn(styles.hiddenTitle)}>*/}
-                 {/* <span className={cn(styles.waterwayMaintitle)}>Waterway</span>*/}
-                 {/* Season 4</span>*/}
                   <h4 className={styles.waterwayTitle}>
                     The longer you hold, the better your
                     <span className={styles.textAccent}> loot chances.</span>

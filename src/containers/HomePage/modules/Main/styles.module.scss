@@ -94,10 +94,11 @@
 
   .mainContainer {
     position: relative;
+    height: 100%;
     .mainInbox {
       position: absolute;
       left: 0;
-      top: 13.021vw;
+      top: 29%;
       width: 26.719vw;
       height: auto;
       padding: 1.042vw 1.563vw 2.344vw 1.563vw;
@@ -123,7 +124,7 @@
     }
 
     .mainTitle {
-      top: 25vw;
+      top: 51.5%;
       left: 0;
       position: absolute;
       z-index: 3;
@@ -133,8 +134,8 @@
       font-size: 3.021vw;
       line-height: 2.708vw;
       color: #ffffff;
-      width: 40.885vw;
-      margin: 0 0 3.281vw 0;
+      width: max-content;
+      margin: 0;
       span {
         font-family: "Wild World";
         color: #ff66c4;
@@ -143,7 +144,7 @@
 
     .mainSubtitle {
       position: absolute;
-      top: 29.646vw;
+      top: 57vh;
       width: 40.208vw;
       left: 0;
       font-family: "Inter";
@@ -177,7 +178,7 @@
     .populationContainer {
       position: absolute;
       right: 2.083vw;
-      top: 6.25vw;
+      top: 16%;
       z-index: 3;
 
       .mainPopulation {

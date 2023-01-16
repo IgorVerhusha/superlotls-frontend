@@ -5,7 +5,7 @@ import cn from 'classnames';
 
 type accordionItemType = {
   title: string
-  content: string
+  content: string | React.ReactNode
 }
 
 type Props = {
@@ -15,7 +15,7 @@ type Props = {
 
 type AccordionItemProps = {
   title: string
-  content: string
+  content: string | React.ReactNode
   index1: number
   index2: number
   showText: number | null

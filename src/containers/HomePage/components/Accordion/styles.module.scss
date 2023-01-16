@@ -3,7 +3,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   color: #fff;
-  font-family: "Oswald";
+  font-family: "Inter";
   font-weight: 300;
 }
 
@@ -44,7 +44,7 @@
     left: 0.938vw;
     transform: translate(-50%, -50%);
     background: #fff;
-    transition: 0.6s height, 0.3s background-color;
+    transition: 0.3s height, 0.3s background-color;
   }
   &:before {
     width: 0.104vw;
@@ -82,8 +82,9 @@
   line-height: calc(32 / 22);
   opacity: 0.6;
   padding: 0.365vw 0 1.51vw 2.344vw;
-  //max-height: 0;
-  //transition: 0.3s max-height;
+  a {
+    color: #FF66C4;
+  }
 }
 
 .accordionWrap {
@@ -173,20 +174,6 @@
   .accordionTitle {
     font-size: 4.267vw;
     line-height: 6.4vw;
-    padding: 5.333vw 5.333vw 5.333vw 10.667vw;
-    &::before {
-      width: 0.533vw;
-      height: 3.2vw;
-    }
-    &::after {
-      width: 3.2vw;
-      height: 0.533vw;
-    }
-  }
-
-  .accordionTitle {
-    font-size: 5.333vw;
-    line-height: calc(30 / 20);
     padding: 4.533vw 5.333vw 4.533vw 10.133vw;
     &::before {
       width: 0.533vw;
@@ -199,6 +186,7 @@
       left: 4.267vw;
     }
   }
+
   .accordionContent {
     font-size: 4.267vw;
     line-height: 6.4vw;

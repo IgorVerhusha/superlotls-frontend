@@ -1,4 +1,5 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
+import Image from 'next/image';
 import cn from 'classnames';
 import mainStyles from '@containers/HomePage/styles.module.scss';
 import styles from './styles.module.scss';
@@ -15,10 +16,12 @@ type Props = {
 const HomePageMain: FC<Props> = ({ onExecuteScroll }) => {
   return (
     <section className={styles.main}>
-      <img
+      <Image
         src={mainBg.src}
         alt=""
         className={styles.mainBackground}
+        width={3840}
+        height={2158}
       />
       <img src={topSmoke.src} alt="" className={styles.topSmoke}/>
       <img src={bottomSmoke.src} alt="" className={styles.bottomSmoke}/>
@@ -57,4 +60,4 @@ const HomePageMain: FC<Props> = ({ onExecuteScroll }) => {
     ;
 };
 
-export default HomePageMain;
+export default memo(HomePageMain);

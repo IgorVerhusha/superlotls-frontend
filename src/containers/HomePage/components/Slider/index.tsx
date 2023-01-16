@@ -88,7 +88,7 @@ const Slider = () => {
             President and Co-Founder of Inkbox, over 10 years experience running a super brand
           </p>
           <div className={styles.social}>
-            <a href="#">
+            <a href="https://www.linkedin.com/in/bradenhandley/">
               <svg
                 width="46"
                 height="46"
@@ -105,7 +105,7 @@ const Slider = () => {
                 />
               </svg>
             </a>
-            <a href="#">
+            <a href="https://twitter.com/bradenhandley?lang=en">
               <svg
                 width="46"
                 height="46"

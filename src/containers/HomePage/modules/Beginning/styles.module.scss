@@ -36,6 +36,18 @@
   }
 }
 
+@keyframes begining-arrow768 {
+  0% {
+    transform: translateY(0) rotate(-45deg);
+  }
+  50% {
+    transform: translateY(-120%) rotate(-45deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-45deg);
+  }
+}
+
 .beginning {
   position: relative;
   height: 156.25vw;
