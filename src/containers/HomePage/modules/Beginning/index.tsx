@@ -41,7 +41,7 @@ const BeginningHomePage: FC<Props> = ({ beginningSectionRef }) => {
   }, []);
 
   useEffect(() => {
-    if (windowSize.width && windowSize.width < 1280) return;
+    if (windowSize.width && windowSize.width <= 1280) return;
     const onScroll = () => {
       if (!beginningSectionRef.current) return;
       const begScroll = (-1 * beginningSectionRef.current.getBoundingClientRect().y / (beginningSectionRef.current.clientHeight / 100));
@@ -68,7 +68,7 @@ const BeginningHomePage: FC<Props> = ({ beginningSectionRef }) => {
   return (
     <section
       className={styles.beginning} ref={beginningSectionRef}
-      style={windowSize.width && windowSize.width < 1280 ? {} : {
+      style={windowSize.width && windowSize.width <= 1280 ? {} : {
         zIndex: beginningOpacity > 0 ? 9 : -1,
         opacity: beginningOpacity
       }}

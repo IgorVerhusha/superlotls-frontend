@@ -5,7 +5,7 @@ import mintBg from 'public/assets/img/home-page/mint/mint-bg.png';
 import waterwayBg from 'public/assets/img/home-page/waterway/waterway-bg.jpg';
 import waterwayBlur from 'public/assets/img/home-page/waterway/waterway-blur.jpg';
 import bubble from 'public/assets/img/home-page/waterway/bubble.png';
-import axolots from 'public/assets/img/home-page/waterway/axolots.gif';
+import tab1 from 'public/assets/img/home-page/waterway/tab-1.png';
 import tab2 from 'public/assets/img/home-page/waterway/tab-2.png';
 import tab3 from 'public/assets/img/home-page/waterway/tab-3.png';
 import tab4 from 'public/assets/img/home-page/waterway/tab-4.png';
@@ -23,16 +23,17 @@ const MintWaterway: FC = () => {
 
   const handleActiveWaterwayTab = (tab: number) => {
     if (!mintWaterwaySection.current) return;
+    setActiveWaterwayTab(tab);
+    if (windowSize.width && windowSize.width <= 1280) return;
     window.scrollTo({
       top:
         mintWaterwaySection.current.offsetTop +
         (mintWaterwaySection.current.clientHeight / 6) * (tab + 1),
     });
-    setActiveWaterwayTab(tab);
   };
 
   useEffect(() => {
-    if (windowSize.width && windowSize.width < 1280) return;
+    if (windowSize.width && windowSize.width <= 1280) return;
     const onScroll = () => {
       if (!mintWaterwaySection.current) return;
       const mintScroll = (-1 * mintWaterwaySection.current.getBoundingClientRect().y / (mintWaterwaySection.current.clientHeight / 100));
@@ -82,15 +83,15 @@ const MintWaterway: FC = () => {
                   as an IRL semi-permanent design.
                 </p>
                 <p className={styles.mainText}>
-                  Proceeds for every sale for Season 1 are donated to support Cancer Research.<br/>
+                  Proceeds for every sale for Season 1 are donated to support Cancer Research. <br/>
                   Exclusive Superloot drops will be available for all holders.<br/> Mint your Superlotl and get ready!
                 </p>
               </div>
-              <button className={styles.btn}>Mint</button>
+              <button disabled className={styles.btn}>Soon..</button>
               <img src={mintBg.src} alt="" className={styles.bg}/>
               <div className={styles.animeCircle}>
                 <div className={styles.wrapperCircle}>
-                  <video className={styles.circleAnime} autoPlay muted loop>
+                  <video className={styles.circleAnime} autoPlay muted loop playsInline>
                     <source src="/assets/img/home-page/mint/axolotl_placeholder.mp4" type="video/mp4"/>
                   </video>
                   <img src="/assets/img/home-page/mint/axolotl_placeholder-blur.svg" alt=""
@@ -115,13 +116,13 @@ const MintWaterway: FC = () => {
                 <div className={styles.waterwayBubble}>
                   <div className={styles.bubbleContainer}>
                     <img src={bubble.src} alt="" className={styles.bubble}/>
-                    <img src={axolots.src} alt="" className={cn(styles.axolots, styles.img1)}/>
+                    <img src={tab1.src} alt="" className={cn(styles.axolots, styles.img1)}/>
                     <img src={tab2.src} alt="" className={cn(styles.axolots, styles.img2)}/>
                     <img src={tab3.src} alt="" className={cn(styles.axolots, styles.img3)}/>
                     <img src={tab4.src} alt="" className={cn(styles.axolots, styles.img4)}/>
                   </div>
                 </div>
-                <span className={styles.waterwayMaintitle}>INK The Metaverse</span>
+                <span className={styles.waterwayMaintitle}>INK The Superverse</span>
                 <a onClick={() => handleActiveWaterwayTab(1)}
                    className={cn(styles.waterwayTab, { [styles.active]: activeWaterwayTab === 1 })}>
                   Season 1
@@ -168,15 +169,13 @@ const MintWaterway: FC = () => {
                     <li>Buy, sell, and collect up to 4 tattoos for your Superlotl.</li>
                     <li>Gain access to pop-up shops, events and tattoo conventions centered around self-expression in
                       the real
-                      world and The Metaverse. Superlotl holders get rewards when they visit!
+                      world and The Superverse. Superlotl holders get rewards when they visit!
                     </li>
                   </ul>
                 </div>
                 <div ref={activeWaterwayTab === 3 ? currWaterwayText : null} className={styles.waterwayText3}>
                   <h4 className={styles.waterwayTitle}>
-                    <span className={styles.textAccent}>Every Superlotl hatches with a unique tattoo</span> that tells the
-                    story
-                    of the Superherd.
+                    <span className={styles.textAccent}>Superlotl is dedicated to giving back</span> through IRL tattoo sales.
                   </h4>
                   <ul>
                     <li>Your Superlotl’s 1/1 design will be available for purchase as an IRL temporary tattoo on <a

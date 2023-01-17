@@ -141,48 +141,48 @@
   justify-content: center;
   text-transform: uppercase;
   text-decoration: none;
-  background: #fff;
-  color: #07031f;
+  background: #171D27;
+  color: #fff;
   position: relative;
   border-radius: 0.417vw;
   border: none;
   overflow: hidden;
   transition: 0.3s background-color, 0.3s color;
-  &::before,
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-    width: 3.411vw;
-    height: 1.146vw;
-    background-image: url(/assets/img/home-page/mint/btn-stripes.svg);
-    background-size: 3.411vw auto;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-  &::before {
-    left: 0;
-  }
-  &::after {
-    right: 0;
-  }
-  &:hover {
-    background-color: #ff4cbd;
-    color: #fff;
-    img {
-      filter: hue-rotate(100deg);
-    }
-  }
+  //&::before,
+  //&::after {
+  //  content: "";
+  //  display: block;
+  //  position: absolute;
+  //  top: 50%;
+  //  transform: translate(0, -50%);
+  //  width: 3.411vw;
+  //  height: 1.146vw;
+  //  background-image: url(/assets/img/home-page/mint/btn-stripes.svg);
+  //  background-size: 3.411vw auto;
+  //  background-repeat: no-repeat;
+  //  background-position: center center;
+  //}
+  //&::before {
+  //  left: 0;
+  //}
+  //&::after {
+  //  right: 0;
+  //}
+  //&:hover {
+  //  background-color: #ff4cbd;
+  //  color: #fff;
+  //  img {
+  //    filter: hue-rotate(100deg);
+  //  }
+  //}
 }
 
 .btn {
   width: 12.917vw;
   transition: 0.3s border-radius, 0.3s background, 0.3s color;
-  &:hover {
-    border-radius: 0.938vw;
-  }
+  //&:hover {
+  //  border-radius: 0.938vw;
+  //}
 }
 
 .waterwayMaintitle {
@@ -935,7 +935,7 @@
     .container {
       flex-direction: column;
       &::before {
-        content: "INK the Metaverse";
+        content: "INK the Superverse";
         font-family: "Inter";
         font-style: normal;
         font-weight: 500;
@@ -1095,7 +1095,7 @@
       width: 252vw;
     }
     .animeCircle {
-      top: 42.667vw;
+      top: 43.667vw;
       bottom: auto;
       left: -13.75vw;
       width: 91.2vw;

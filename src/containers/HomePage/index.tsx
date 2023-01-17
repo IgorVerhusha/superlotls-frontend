@@ -62,23 +62,23 @@ const HomePage: FC = () => {
 
                   <div className={styles.socials}>
                     <a href="https://twitter.com/superlotls" className={styles.btn}
-                    ><span>join</span><img src="/assets/img/home-page/footer/twitter-logo.svg"
+                    ><img src="/assets/img/home-page/footer/twitter-logo.svg"
                                            alt=""/><span>twitter</span></a
                     >
                     <a href="https://www.instagram.com/superlotls/" className={styles.btn}
-                    ><span>join</span>
+                    >
                       <img src="/assets/img/home-page/footer/instagram-logo.svg" alt=""/><span>instagram</span></a
                     >
                     <a href="https://discord.gg/8aTE9GTsAT" className={styles.btn}
-                    ><span>join</span><img src="/assets/img/home-page/footer/discord-logo.svg"
+                    ><img src="/assets/img/home-page/footer/discord-logo.svg"
                                            alt=""/><span>discord</span></a
                     >
                   </div>
 
                   <div className={styles.footerBlockWrapper}>
                     <div className={styles.terms}>
-                      <a href="">TERMS & CONDITIONS</a>
-                      <a href="">PRIVACY POLICY</a>
+                      {/*<a href="">TERMS & CONDITIONS</a>*/}
+                      {/*<a href="">PRIVACY POLICY</a>*/}
                     </div>
                     <div className={styles.powered}>
                       <a href="https://www.niftables.com/" rel="noreferrer" className={styles.powered} target="_blank">

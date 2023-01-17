@@ -35,7 +35,7 @@ const HomePageMain: FC<Props> = ({ onExecuteScroll }) => {
             available for sale as a semi-permanent tattoo <br/> on
             <a href="https://inkbox.com/" rel="noreferrer" target="_blank"> inkbox.com </a>
             <br/>
-            Proceeds for each sale are donated to charitable organizations.
+            Proceeds from each sale are donated to charitable organizations.
           </p>
         </div>
         <h1 className={styles.mainTitle}>
@@ -43,7 +43,7 @@ const HomePageMain: FC<Props> = ({ onExecuteScroll }) => {
         </h1>
         <h2 className={styles.mainSubtitle}>
           Built by the world leader <br/> in semi-permanent tattoos and self
-          expression, Superlotl is dedicated to Inking the Metaverse!
+          expression, Superlotl is dedicated to Inking the Superverse!
         </h2>
         <div className={styles.populationContainer}>
           <h2 className={styles.mainPopulation}>5,000 <span>Population</span></h2>
