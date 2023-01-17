@@ -18,15 +18,6 @@
     border-color: #ff4cbd;
 
   }
-  &.show {
-    max-height: 15.625vw !important;
-
-
-    //.accordionContent {
-    //  padding: 0.365vw 0 1.51vw 2.344vw;
-    //  max-height: none;
-    //}
-  }
 }
 
 .accordionTitle {
@@ -101,9 +92,6 @@
 
   .accordionItem {
     width: 100%;
-    &.show {
-      max-height: 34.18vw !important;
-    }
   }
 
   .accordionTitle {
@@ -166,9 +154,6 @@
 
   .accordionItem {
     width: 100%;
-    &.show {
-      max-height: 80.18vw !important;
-    }
   }
 
   .accordionTitle {

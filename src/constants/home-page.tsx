@@ -22,6 +22,42 @@ export const SLIDES = [
   }
 ];
 
+export const CO_FOUNDERS = [
+  {
+    name: 'Superh@nd',
+    position: 'Co-founder',
+    description: 'President and Co-Founder of Inkbox, over 10 years experience running a super brand',
+    linkedin: 'https://www.linkedin.com/in/bradenhandley/',
+    twitter: 'https://twitter.com/bradenhandley?lang=en'
+  },
+  {
+    name: 'RebKon',
+    position: 'Co-founder',
+    description: 'Web3 degen and lover of all things super weird, easily distracted by bright colors',
+    linkedin: 'https://www.linkedin.com/in/rebecca-kontosic-1714a075/',
+    twitter: 'https://twitter.com/rebeccakontosic'
+  },
+  {
+    name: 'Worm',
+    position: 'Co-founder',
+    description: 'Queen of Brand and Partnerships, and super Queen of Queens',
+    linkedin: 'https://www.linkedin.com/in/kristine-gallardo-8a47b34/?originalSubdomain=uk',
+  },
+  {
+    name: 'ARTonAR',
+    position: 'Super Artists',
+    description: 'Using super 3D and AR technology to develop impressive works of art on the blockchain',
+    site: 'https://artonar.xyz/',
+  },
+  {
+    name: 'Niftables',
+    position: 'Super Devs',
+    description: 'Experts at platform development, UX wizards with a knack for super execution',
+    site: 'https://www.niftables.com/',
+    twitter: 'https://twitter.com/niftables?lang=en'
+  }
+];
+
 export const ACCORDION_ITEMS = [
   {
     title: 'What is Inkbox?',

@@ -26,17 +26,19 @@ const AccordionItem: FC<AccordionItemProps> = (
   {index1, index2, handleShowText, showText, title, content}
 ) => {
   const accordionTitle = useRef<HTMLDivElement>(null);
-
+  const accordionItem = useRef<HTMLDivElement>(null);
+  const currentIndex = (index1 * 6) + index2;
   return <div
-   onClick={() => handleShowText((index1 * 6) + index2)}
-   style={{maxHeight: `${accordionTitle.current?.offsetHeight}px`}}
-   className={cn(styles.accordionItem, { [styles.show]: showText === (index1 * 6) + index2 })}>
+   onClick={() => handleShowText(currentIndex)}
+   style={{maxHeight: `${accordionTitle.current?.offsetHeight as number + (showText === currentIndex 
+       ? accordionItem.current?.offsetHeight as number : 0)}px`}}
+   className={styles.accordionItem}>
     <div
       ref={accordionTitle}
-      className={cn(styles.accordionTitle, { [styles.show]: showText === (index1 * 6) + index2 })}>
+      className={cn(styles.accordionTitle, { [styles.show]: showText === currentIndex })}>
       {title}
     </div>
-    <div className={styles.accordionContent}>
+    <div ref={accordionItem} className={styles.accordionContent}>
       {content}
     </div>
   </div>
@@ -66,7 +68,6 @@ export const Accordion: FC<Props> = ({ accordionItems }) => {
           showText={showText}
         />)}
       </div>)}
-
     </div>
   );
 };

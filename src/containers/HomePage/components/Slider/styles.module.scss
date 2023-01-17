@@ -210,72 +210,81 @@
         }
       }
 
-      span {
-        margin: 7.813vw 0 0 0;
-        font-family: "Wild World";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 1.667vw;
-        line-height: 1.667vw;
-        color: #ffffff;
-      }
+      .founders {
+        display: none;
+        flex-direction: column;
+        &.show {
+          display: flex;
+        }
+        span {
+          margin: 7.813vw 0 0 0;
+          font-family: "Wild World";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 1.667vw;
+          line-height: 1.667vw;
+          color: #ffffff;
+        }
 
-      strong {
-        margin: 0.26vw 0 0 0;
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 600;
-        font-size: 1.146vw;
-        line-height: 1.406vw;
-        color: #ff66c4;
-        letter-spacing: -0.02em;
-      }
+        strong {
+          margin: 0.26vw 0 0 0;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 1.146vw;
+          line-height: 1.406vw;
+          color: #ff66c4;
+          letter-spacing: -0.02em;
+        }
 
-      p {
-        margin: 1.146vw 0 0 0;
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 0.938vw;
-        line-height: 1.354vw;
-        letter-spacing: -0.02em;
-        color: #ffffff;
-        opacity: 0.6;
-        width: 22.917vw;
-      }
+        p {
+          margin: 1.146vw 0 0 0;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 0.938vw;
+          line-height: 1.354vw;
+          letter-spacing: -0.02em;
+          color: #ffffff;
+          opacity: 0.6;
+          width: 22.917vw;
+        }
 
-      .social {
-        margin: 1.823vw 0 0 0;
-        display: flex;
-        gap: 0.781vw;
+        .social {
+          margin: 1.823vw 0 0 0;
+          display: flex;
+          gap: 0.781vw;
 
-        a {
-          width: 2.396vw;
-          height: 2.396vw;
-          border-radius: 50%;
+          a {
+            width: 2.396vw;
+            height: 2.396vw;
+            border-radius: 50%;
 
-          svg {
-            fill: white;
-            width: 100%;
-            height: auto;
-            transition: .3s fill;
-
-            path {
-              transition: .3s fill;
-            }
-          }
-
-          &:hover {
             svg {
-              fill: #ff66c4;
+              fill: white;
+              width: 100%;
+              height: auto;
+              transition: .3s fill;
 
               path {
-                fill: white;
+                transition: .3s fill;
+              }
+            }
+
+            &:hover {
+              svg {
+                fill: #ff66c4;
+
+                path {
+                  fill: white;
+                }
               }
             }
           }
         }
       }
+
+
     }
   }
 }

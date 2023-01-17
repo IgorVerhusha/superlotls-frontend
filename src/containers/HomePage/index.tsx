@@ -15,7 +15,6 @@ import styles from './styles.module.scss';
 
 const HomePage: FC = () => {
     const [pageIsInit, setPageIsInit] = useState(false);
-
     const beginningSection = useRef<HTMLDivElement>(null);
 
     const handleExecuteScroll = () => {
@@ -26,8 +25,11 @@ const HomePage: FC = () => {
 
     return (
       <>
-        <Preloader pageIsInit={pageIsInit}/>
-        <div className={cn(styles.wrapper)}>
+        <Preloader
+          pageIsInit={pageIsInit}
+          setPageIsInit={setPageIsInit}
+        />
+        <div className={cn(styles.wrapper, {[styles.isLoading]: !pageIsInit})}>
           <section className={styles.header}>
             <a href="#">
               <img className={styles.logo} src={headerLogo.src} alt="" />
@@ -36,7 +38,6 @@ const HomePage: FC = () => {
           <HomePageMain onExecuteScroll={handleExecuteScroll}/>
           <BeginningHomePage
             beginningSectionRef={beginningSection}
-            setPageIsInit={setPageIsInit}
           />
           <div className={styles.fadeWrapper}>
             <MintWaterway />

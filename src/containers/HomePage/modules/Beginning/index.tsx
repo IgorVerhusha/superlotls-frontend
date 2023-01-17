@@ -1,6 +1,8 @@
 import React, { FC, useEffect, useState } from 'react';
 import Image from 'next/image';
 import mainStyles from '@containers/HomePage/styles.module.scss';
+import TriangleSlider from '@containers/HomePage/components/TriangleSlider';
+import { useWindowSize } from '@hooks/useWindowSize';
 import styles from './styles.module.scss';
 import waterBlur from 'public/assets/img/home-page/water-blur.png';
 import beginningBackground from 'public/assets/img/home-page/beginning/beginning-background.png';
@@ -9,13 +11,9 @@ import cn from 'classnames';
 import bubbles2 from 'public/assets/img/home-page/bubbles2.png';
 import bubbles3 from 'public/assets/img/home-page/bubbles3.png';
 import bubbles4 from 'public/assets/img/home-page/bubbles4.png';
-import TriangleSlider from '@containers/HomePage/components/TriangleSlider';
-import { useWindowSize } from '@hooks/useWindowSize';
-
 
 type Props = {
   beginningSectionRef: React.RefObject<HTMLDivElement>
-  setPageIsInit: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const BUBBLES = [
@@ -26,7 +24,7 @@ const BUBBLES = [
 ];
 
 
-const BeginningHomePage: FC<Props> = ({ beginningSectionRef, setPageIsInit }) => {
+const BeginningHomePage: FC<Props> = ({ beginningSectionRef }) => {
   const [activeBubble, setActiveBubble] = useState(0);
   const [beginningScroll, setBeginningScroll] = useState(0);
   const [beginningOpacity, setBeginningOpacity] = useState(0);
@@ -67,10 +65,6 @@ const BeginningHomePage: FC<Props> = ({ beginningSectionRef, setPageIsInit }) =>
     return () => window.removeEventListener('scroll', onScroll);
   }, [windowSize.width]);
 
-  const handlePageInit = () => {
-    setPageIsInit(true);
-  };
-
   return (
     <section
       className={styles.beginning} ref={beginningSectionRef}
@@ -90,7 +84,6 @@ const BeginningHomePage: FC<Props> = ({ beginningSectionRef, setPageIsInit }) =>
             alt=""
             width={3840}
             height={2344}
-            onLoadingComplete={handlePageInit}
           />
           {BUBBLES.map((item, index) => <img
             src={item}
