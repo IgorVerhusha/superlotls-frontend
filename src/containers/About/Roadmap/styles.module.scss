@@ -1,0 +1,317 @@
+.roadmap {
+  padding: 2.604vw 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #03010d;
+  .roadmapContainer {
+    position: relative;
+    .roadmapTitle {
+      font-family: "Wild World";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 2.5vw;
+      line-height: 3.542vw;
+      color: #ffffff;
+      text-align: center;
+    }
+    .vr {
+      position: relative;
+      overflow: hidden;
+      .code {
+        position: absolute;
+        top: 5.99vw;
+        right: 9.115vw;
+        width: 4.531vw;
+        height: auto;
+        mix-blend-mode: exclusion;
+        border-radius: 0.521vw;
+        z-index: 25;
+      }
+      .mask {
+        width: 100%;
+        height: auto;
+        z-index: 1;
+        position: relative;
+      }
+      .semirounds {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        transition: 0.75s ease-in-out transform, 0.75s ease-in-out opacity;
+      }
+      .semirounds2 {
+        transform: scale(0.48);
+        opacity: 0.3;
+      }
+      .semirounds3 {
+        transform: scale(0.2);
+        opacity: 0;
+      }
+      .road {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        transition: 0.75s ease-in-out transform;
+      }
+      .vrBubble {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 4.896vw;
+        height: auto;
+        opacity: 0;
+        transition: 0.75s ease-in-out transform, 0.75s ease-in-out opacity;
+      }
+      .vrText {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        z-index: 1;
+        width: 26.042vw;
+        display: flex;
+        flex-direction: column;
+        gap: 1.042vw;
+        transition: 0.75s ease-in-out transform, 0.75s ease-in-out opacity,
+        0.75s ease-in-out top;
+        p {
+          font-family: "Inter";
+          text-align: center;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 0.938vw;
+          line-height: 1.354vw;
+          letter-spacing: -0.02em;
+          color: #ffffff;
+          a {
+            color: #ff66c4;
+          }
+        }
+      }
+      .text2,
+      .text3 {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+      }
+      .roadmapNavigation {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.885vw;
+        .navigationButtonContainer {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          gap: 3.385vw;
+          width: max-content;
+          .backgroundButton {
+            height: 100%;
+            position: absolute;
+            background: #ff66c4;
+            left: 0%;
+            transform: translateX(0%);
+            transition: 0.75s width, 0.75s left, 0.75s transform;
+            border-radius: 0.313vw;
+          }
+          .navigationButton {
+            padding: 0.26vw;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 0.833vw;
+            line-height: 0.833vw;
+            text-align: center;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+            border-radius: 0.313vw;
+            background: none;
+            border: none;
+            transition: 0.35s ease-in-out color;
+            z-index: 1;
+          }
+          .button2 {
+            &:hover {
+              color: #ff66c4;
+            }
+          }
+          .button3 {
+            &:hover {
+              color: #ff66c4;
+            }
+          }
+        }
+        .navigationLine {
+          width: 37.552vw;
+          height: auto;
+          path {
+            transition: 0.75s ease-in-out fill;
+          }
+        }
+      }
+
+      &.step2 {
+        .semirounds1 {
+          transform: scale(2);
+        }
+        .semirounds2 {
+          transform: scale(1);
+          opacity: 1;
+        }
+        .semirounds3 {
+          transform: scale(0.48);
+          opacity: 0.3;
+        }
+        .road {
+          transform: scale(2);
+        }
+        .vrBubble {
+          transform: translate(-50%, -50%) scale(3.59);
+          opacity: 0.5;
+        }
+        .text1 {
+          top: 0;
+          transform: translate(-50%, -300%) scale(1);
+        }
+        .text2 {
+          transform: translate(-50%, -50%) scale(1);
+          opacity: 1;
+        }
+        .text3 {
+          transform: translate(-50%, -50%) scale(0.5);
+          opacity: 0;
+        }
+        .roadmapNavigation {
+          .navigationButtonContainer {
+            .backgroundButton {
+              left: 50%;
+              transform: translateX(-48%);
+            }
+            .button1 {
+              &:hover {
+                &:hover {
+                  color: #ff66c4;
+                }
+              }
+            }
+            .button2 {
+              &:hover {
+                &:hover {
+                  color: #ffffff;
+                }
+              }
+            }
+            .button3 {
+              &:hover {
+                &:hover {
+                  color: #ff66c4;
+                }
+              }
+            }
+          }
+          .navigationLine {
+            .triangle1 {
+              fill: #1c1a25;
+            }
+            .triangle2 {
+              fill: #ff66c4;
+            }
+            .triangle3 {
+              fill: #1c1a25;
+            }
+          }
+        }
+      }
+      &.step3 {
+        .semirounds1 {
+          transform: scale(2);
+        }
+        .semirounds2 {
+          transform: scale(2);
+          opacity: 1;
+        }
+        .semirounds3 {
+          transform: scale(1);
+          opacity: 1;
+        }
+        .road {
+          transform: scale(4);
+        }
+        .vrBubble {
+          transform: scale(24.7);
+          opacity: 0.1;
+        }
+        .text1 {
+          top: 0;
+          transform: translate(-50%, -300%) scale(1);
+        }
+        .text2 {
+          top: 0;
+          transform: translate(-50%, -300%) scale(1);
+        }
+        .text3 {
+          transform: translate(-50%, -50%) scale(1);
+          opacity: 1;
+        }
+        .roadmapNavigation {
+          .navigationButtonContainer {
+            .backgroundButton {
+              left: 100%;
+              transform: translateX(-99%);
+            }
+            .button1 {
+              &:hover {
+                &:hover {
+                  color: #ff66c4;
+                }
+              }
+            }
+            .button2 {
+              &:hover {
+                &:hover {
+                  color: #ff66c4;
+                }
+              }
+            }
+            .button3 {
+              &:hover {
+                &:hover {
+                  color: #ffffff;
+                }
+              }
+            }
+          }
+          .navigationLine {
+            .triangle1 {
+              fill: #1c1a25;
+            }
+            .triangle2 {
+              fill: #1c1a25;
+            }
+            .triangle3 {
+              fill: #ff66c4;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-aspect-ratio: 1920 / 860) and (min-width: 1281px) {
+  .roadmap {
+    height: 50.521vw;
+  }
+}

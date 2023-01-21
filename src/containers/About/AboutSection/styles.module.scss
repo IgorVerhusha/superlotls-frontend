@@ -1,0 +1,219 @@
+@keyframes about-logo-bg {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(2.344vw);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.about {
+  position: relative;
+  padding: 5.99vw 0 3.229vw 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+
+  .logoBg {
+    position: absolute;
+    top: 10.104vw;
+    right: 10vw;
+    width: 30vw;
+    height: auto;
+    opacity: 0.1;
+    animation: about-logo-bg 6s ease-in-out infinite;
+    z-index: 1;
+  }
+
+  .aboutBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+  }
+
+  .aboutContainer {
+    z-index: 1;
+
+    .aboutTitle {
+      font-family: "Wild World";
+      font-weight: 500;
+      font-size: 3.542vw;
+      line-height: 4.583vw;
+      color: #ffffff;
+    }
+
+    .aboutSubtitle {
+      margin: 2.604vw 0 0 0;
+      width: 44.115vw;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.146vw;
+      line-height: 1.667vw;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+    }
+
+    .aboutDescription {
+      display: block;
+      margin: 2.083vw 0 0 0;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 0.938vw;
+      line-height: 1.354vw;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      opacity: 0.5;
+    }
+
+    .aboutSliderWrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin: 2.604vw 0 0 0;
+
+      .slider {
+        display: flex;
+        align-items: center;
+        gap: 2.344vw;
+
+        .buttonPrev,
+        .buttonNext {
+          padding: 0;
+          margin: 0;
+          width: 2.917vw;
+          height: 1.25vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: none;
+          border: 0.052vw solid #ffffff;
+          border-radius: 0.417vw;
+          transition: 0.3s color;
+          transform: translateY(0.938vw);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: 0.25s background ease-out, 0.25s border ease-out,
+          0.2s ease-in-out opacity;
+
+          img {
+            width: 1.771vw;
+            height: 0.521vw;
+          }
+
+          &:hover {
+            background: #ff66c4;
+            border: 0.052vw solid #ff66c4;
+          }
+
+          &.inactive {
+            opacity: 0.3;
+
+            &:hover {
+              border: 0.052vw solid #ffffff;
+              background: none;
+            }
+          }
+        }
+
+        .buttonNext {
+          img {
+            transform: rotate(180deg);
+          }
+        }
+
+        .slideContainer {
+          overflow: hidden;
+          width: 33.646vw;
+
+          .slideWrapper {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            gap: 0.521vw;
+            transition: 0.35s transform ease-in-out;
+
+            .slide {
+              flex-shrink: 0;
+              width: 7.083vw;
+              height: 7.083vw;
+              padding: 0 0.938vw 0.677vw 0.938vw;
+              display: flex;
+              border-radius: 0.417vw 0.417vw 0vw 0vw;
+              -webkit-mask-image: -webkit-radial-gradient(white, black);
+              transition: 0.35s width ease-in-out, 0.35s height ease-in-out;
+              position: relative;
+              overflow: hidden;
+
+              img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+
+              span {
+                font-family: "Inter";
+                font-style: normal;
+                font-weight: 600;
+                font-size: 0.677vw;
+                line-height: 1.146vw;
+                display: flex;
+                align-items: flex-end;
+                letter-spacing: -0.02em;
+                color: #ffffff;
+                z-index: 1;
+                transition: 0.35s transform;
+                transform-origin: bottom;
+              }
+
+              &.active {
+                width: 8.958vw;
+                height: 8.958vw;
+
+                span {
+                  transform: scale(1.23);
+                  transform-origin: bottom;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .sliderDescription {
+        width: 22.917vw;
+
+        p {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 0.938vw;
+          line-height: 1.354vw;
+          letter-spacing: -0.02em;
+          color: #ffffff;
+
+          &:last-child {
+            color: #ff66c4;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-aspect-ratio: 1920 / 860) and (min-width: 1281px) {
+  .about {
+    height: 50.521vw;
+  }
+}

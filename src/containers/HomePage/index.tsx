@@ -2,7 +2,7 @@ import React, { FC, memo, useRef, useState } from 'react';
 import Slider from '@containers/HomePage/components/Slider';
 import footer from 'public/assets/img/home-page/footer/footer.jpg';
 import light from 'public/assets/img/home-page/faq/light.png';
-import headerLogo from 'public/assets/img/home-page/header/logo.png';
+import Header from '@components/Header';
 import { ACCORDION_ITEMS } from '@constants/home-page';
 import { Accordion } from '@containers/HomePage/components/Accordion';
 import HomePageMain from '@containers/HomePage/modules/Main';
@@ -30,11 +30,7 @@ const HomePage: FC = () => {
           setPageIsInit={setPageIsInit}
         />
         <div className={cn(styles.wrapper, {[styles.isLoading]: !pageIsInit})}>
-          <section className={styles.header}>
-            <a href="#">
-              <img className={styles.logo} src={headerLogo.src} alt="" />
-            </a>
-          </section>
+          <Header />
           <HomePageMain onExecuteScroll={handleExecuteScroll}/>
           <BeginningHomePage
             beginningSectionRef={beginningSection}

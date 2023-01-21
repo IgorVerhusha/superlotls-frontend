@@ -2,12 +2,12 @@ import React, { FC, memo } from 'react';
 import Image from 'next/image';
 import cn from 'classnames';
 import mainStyles from '@containers/HomePage/styles.module.scss';
-import styles from './styles.module.scss';
 import mainBg from 'public/assets/img/home-page/main-background.png';
 import topSmoke from 'public/assets/img/home-page/top-smoke.png';
 import bottomSmoke from 'public/assets/img/home-page/bottom-smoke.png';
 import rightSmoke from 'public/assets/img/home-page/right-smoke.png';
 import waterBlur1 from 'public/assets/img/home-page/water-blur1.png';
+import styles from './styles.module.scss';
 
 type Props = {
   onExecuteScroll: () => void

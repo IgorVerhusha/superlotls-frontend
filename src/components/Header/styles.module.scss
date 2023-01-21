@@ -1,0 +1,46 @@
+.header {
+  position: absolute;
+  width: 100%;
+  padding: 1.823vw 2.604vw;
+  z-index: 10;
+  a {
+    .logo {
+      width: 204px;
+      height: auto;
+
+    }
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .header {
+    padding: 3.906vw;
+    a {
+      .logo {
+        width: 18.457vw;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .header {
+    padding: 5.208vw;
+    a {
+      .logo {
+        width: 24.609vw;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    padding: 8vw 5.333vw;
+    a {
+      .logo {
+        width: 50.4vw;
+      }
+    }
+  }
+}
