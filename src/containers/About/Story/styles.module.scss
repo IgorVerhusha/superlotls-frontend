@@ -142,8 +142,87 @@
   }
 }
 
+@media only screen and (max-width: 1280px) {
+  .story {
+    &::before {
+      height: 24.654vw;
+      z-index: 2;
+    }
+    .storyContainer {
+      .storyLeftBlock {
+        width: 51.758vw;
+        .stone {
+          left: -19vw;
+          top: 25.729vw;
+          width: 66.211vw;
+        }
+        .storyTitle {
+          font-size: 3.711vw;
+          line-height: 4.688vw;
+        }
+        .storySubtitle {
+          font-size: 1.758vw;
+          line-height: 2.734vw;
+          width: 24.414vw;
+          margin: 28vw 0 0 3.711vw;
+          img {
+            width: 5.319vw;
+            bottom: 0.781vw;
+            right: 11vw;
+          }
+        }
+      }
+      .storyRightBlock {
+        margin: 9.766vw 0 0 0;
+        width: 42.09vw;
+        height: 54.004vw;
+        padding: 8.789vw 2.93vw 8.594vw 3.906vw;
+        position: relative;
+        &::before {
+          width: 37.739vw;
+          height: 48.284vw;
+          filter: blur(2.539vw);
+        }
+        img {
+          width: 44.02vw;
+          top: -5.664vw;
+          left: -2.637vw;
+          width: 63.379vw;
+        }
+
+        .description {
+          padding: 0 1.953vw 0 0;
+          gap: 2.042vw;
+          p {
+            font-size: 1.367vw;
+            line-height: 1.953vw;
+          }
+          &::-webkit-scrollbar {
+            width: 0.208vw;
+          }
+
+          &::-webkit-scrollbar-track {
+            background-color: #07031f30;
+            border-radius: 0.417vw;
+          }
+          &::-webkit-scrollbar-thumb {
+            box-shadow: inset 0 0 0.313vw #07031f;
+            border-radius: 0.417vw;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (min-aspect-ratio: 1920 / 860) and (min-width: 1281px) {
   .story {
     height: 50.521vw;
+  }
+}
+
+@media only screen and (min-aspect-ratio: 1024 / 768) and (min-width: 601px) {
+  .story {
+    height: 67.188vw;
   }
 }

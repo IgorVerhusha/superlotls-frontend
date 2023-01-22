@@ -124,3 +124,59 @@
     }
   }
 }
+
+@media only screen and (max-width: 1280px) {
+  .footer {
+    gap: 14.648vw;
+    padding: 9.766vw 0 5.859vw 0;
+    .footerContainer {
+      .footerLeftBlock {
+        .footerTitle {
+          font-size: 3.711vw;
+          line-height: 4.688vw;
+          width: 60.156vw;
+          img {
+            display: none;
+          }
+        }
+        .footerSubtitle {
+          font-size: 1.563vw;
+          line-height: 2.344vw;
+          margin: 9.766vw 0 0 0;
+          gap: 0.586vw;
+        }
+      }
+      .footerMail {
+        position: absolute;
+
+        font-size: 2.734vw;
+        line-height: 3.32vw;
+        gap: 1.172vw;
+        transform: translateY(50%);
+        img {
+          width: 2.93vw;
+        }
+      }
+    }
+    .socialContainer {
+      .socialLeftBlock {
+        gap: 3.906vw;
+        span {
+          font-size: 1.172vw;
+          line-height: 1.465vw;
+        }
+      }
+      .socialLogo {
+        width: 16.992vw;
+      }
+      .social {
+        gap: 1.465vw;
+        a {
+          svg {
+            width: 3.32vw;
+          }
+        }
+      }
+    }
+  }
+}

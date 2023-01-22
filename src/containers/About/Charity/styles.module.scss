@@ -1,3 +1,18 @@
+@keyframes bounce-in {
+  0% {
+    transform: scale(1);
+  }
+  5% {
+    transform: scale(1.06);
+  }
+  20% {
+    transform: scale(1.03);
+  }
+  30% {
+    transform: scale(1.06);
+  }
+}
+
 .charity {
   display: flex;
   align-items: center;
@@ -89,8 +104,67 @@
   }
 }
 
+@media only screen and (max-width: 1280px) {
+  .charity {
+    .charityAxolots1 {
+      bottom: 24.5%;
+      left: 3.125vw;
+      width: 9.766vw;
+    }
+    .charityAxolots2 {
+      bottom: 20.5%;
+      left: 13.672vw;
+      width: 15.625vw;
+    }
+    .heartContainer {
+      bottom: 38.5%;
+      top: auto;
+      left: 11.01vw;
+      width: 41.771vw;
+      height: 40.313vw;
+      .heartWrapper {
+        .heart {
+          left: 2.396vw;
+          top: 2.083vw;
+          width: 37.396vw;
+        }
+        .planet {
+          right: 0.313vw;
+          top: 6.302vw;
+          width: 34.051vw;
+        }
+      }
+    }
+    .charityContainer {
+      flex-direction: column;
+      .charityTitle {
+        font-size: 3.711vw;
+        line-height: 4.688vw;
+        width: 48.125vw;
+      }
+      .charitySubtitleWrapper {
+        padding: 0;
+        width: 44.141vw;
+        gap: 1.953vw;
+        margin: 0 0 0 auto;
+        p {
+          font-size: 1.563vw;
+          line-height: 2.344vw;
+        }
+      }
+    }
+  }
+}
+
+
 @media only screen and (min-aspect-ratio: 1920 / 860) and (min-width: 1281px) {
   .charity {
     height: 50.521vw;
+  }
+}
+
+@media only screen and (min-aspect-ratio: 1024 / 768) and (min-width: 601px) {
+  .charity {
+    height: 67.188vw;
   }
 }

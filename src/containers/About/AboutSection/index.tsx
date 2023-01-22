@@ -15,13 +15,18 @@ const AboutSection = () => {
 
   function countVw(a: number, b: number) {
     setVw((screen.width / a) * b);
-    setTranslateWidth(slides?.current?.children[0].clientWidth as number);
+    setTranslateWidth(slides.current?.children[0].clientWidth as number);
   }
 
   const countVwDesktop = () => {
     if (screen.width >= 1281) {
       countVw(19.2, 0.1);
     }
+    if (screen.width >= 601) {
+      countVw(10.24, 0.0867);
+    }
+    setSlideIndex(0);
+    setSlideWidth(slideWidth)
   };
 
   useEffect(() => {
