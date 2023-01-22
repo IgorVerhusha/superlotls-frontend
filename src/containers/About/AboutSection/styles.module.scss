@@ -310,14 +310,119 @@
   }
 }
 
+@media only screen and (max-width: 860px) {
+  .about {
+    .logoBg {
+      top: 27.344vw;
+      right: 5.208vw;
+      width: 36.979vw;
+    }
+    .aboutContainer {
+      .aboutTitle {
+        font-size: 6.25vw;
+        line-height: 8.854vw;
+      }
+      .aboutSubtitle {
+        margin: 1.302vw 0 0 0;
+        width: 52.604vw;
+        font-size: 2.344vw;
+        line-height: 3.646vw;
+      }
+      .aboutDescription {
+        margin: 3.906vw 0 0 0;
+        font-size: 2.083vw;
+        line-height: 3.125vw;
+      }
+      .aboutSliderWrapper {
+        margin: 3.906vw 0 0 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6.51vw;
+        .slider {
+          width: 100%;
+          position: relative;
+          justify-content: space-between;
+          .buttonPrev,
+          .buttonNext {
+            position: static;
+            left: auto;
+            top: auto;
+            bottom: auto;
+            width: 7.292vw;
+            height: 3.125vw;
+            border: 1px solid #ffffff;
+            border-radius: 1.042vw;
+            transform: none;
+            img {
+              width: 4.427vw;
+              height: 1.302vw;
+            }
+            &:hover {
+              border: 1px solid #ff66c4;
+            }
+            &.inactive {
+              &:hover {
+                border: 1px solid #ffffff;
+              }
+            }
+          }
+          .buttonNext {
+            img {
+              transform: rotate(180deg);
+            }
+          }
+
+          .slideContainer {
+            width: 69.792vw;
+            .slideWrapper {
+              gap: 1.042vw;
+              .slide {
+                width: 14.583vw;
+                height: 14.583vw;
+                padding: 0 1.563vw 1.563vw 1.563vw;
+                border-radius: 0.903vw 0.903vw 0 0;
+                span {
+                  font-size: 1.467vw;
+                  line-height: 2.474vw;
+                }
+                &.active {
+                  width: 18.49vw;
+                  height: 18.49vw;
+                  span {
+                    transform: scale(1.26);
+                  }
+                }
+              }
+            }
+          }
+        }
+        .sliderDescription {
+          width: 57.943vw;
+          margin: 0 0 0 auto;
+          p {
+            font-size: 2.083vw;
+            line-height: 3.125vw;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (min-aspect-ratio: 1920 / 860) and (min-width: 1281px) {
   .about {
     height: 50.521vw;
   }
 }
 
-@media only screen and (min-aspect-ratio: 1024 / 768) and (min-width: 601px) {
+@media only screen and (min-aspect-ratio: 1024 / 768) and (min-width: 861px) and (max-width: 1280px)  {
   .about {
     height: 67.188vw;
+  }
+}
+
+@media only screen and (min-aspect-ratio: 768 / 800) and (min-width: 601px) and (max-width: 860px) {
+  .about {
+    height: 117.188vw;
   }
 }

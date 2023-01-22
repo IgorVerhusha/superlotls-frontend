@@ -357,14 +357,67 @@
   }
 }
 
+@media only screen and (max-width: 860px) {
+  .roadmap {
+    .roadmapContainer {
+      .roadmapTitle {
+        font-size: 4.948vw;
+        line-height: 6.25vw;
+      }
+      .vr {
+        margin: 3.906vw 0 0 0;
+        .code {
+          top: 7.813vw;
+          right: 11.458vw;
+          width: 5.729vw;
+        }
+        .vrText {
+          width: 65.104vw;
+          gap: 1.953vw;
+          padding: 0 0 6.51vw 0;
+
+          p {
+            font-size: 2.083vw;
+            line-height: 3.125vw;
+          }
+        }
+        .roadmapNavigation {
+          gap: 3.125vw;
+          .navigationButtonContainer {
+            gap: 6.901vw;
+            .backgroundButton {
+              border-radius: 0.781vw;
+            }
+            .navigationButton {
+              padding: 0.521vw 0.651vw;
+              font-size: 2.083vw;
+              line-height: 2.083vw;
+              border-radius: 0.781vw;
+            }
+          }
+          .navigationLine {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (min-aspect-ratio: 1920 / 860) and (min-width: 1281px) {
   .roadmap {
     height: 50.521vw;
   }
 }
 
-@media only screen and (min-aspect-ratio: 1024 / 768) and (min-width: 601px) {
+@media only screen and (min-aspect-ratio: 1024 / 768) and (min-width: 861px) and (max-width: 1280px)  {
   .roadmap {
     height: 67.188vw;
+  }
+}
+
+@media only screen and (min-aspect-ratio: 768 / 800) and (min-width: 601px) and (max-width: 860px) {
+  .roadmap {
+    height: 117.188vw;
   }
 }

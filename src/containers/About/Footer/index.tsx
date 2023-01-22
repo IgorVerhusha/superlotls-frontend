@@ -50,7 +50,7 @@ const Index = () => {
               />
             </svg>
           </a>
-          <a href="https://twitter.com/superlotls" target="_blank">
+          <a href="https://twitter.com/superlotls" target="_blank" rel="noreferrer">
             <svg
               width="40"
               height="40"
@@ -65,7 +65,7 @@ const Index = () => {
               />
             </svg>
           </a>
-          <a href="https://www.instagram.com/superlotls" target="_blank">
+          <a href="https://www.instagram.com/superlotls" target="_blank" rel="noreferrer">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 
               <circle cx="20" cy="20" r="20" fill="white" />

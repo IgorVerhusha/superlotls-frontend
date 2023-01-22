@@ -180,3 +180,54 @@
     }
   }
 }
+
+@media only screen and (max-width: 860px) {
+  .footer {
+    gap: 13.021vw;
+    padding: 13.021vw 0 7.812vw 0;
+    .footerContainer {
+      .footerLeftBlock {
+        .footerTitle {
+          font-size: 4.948vw;
+          line-height: 6.251vw;
+          width: 100%;
+        }
+        .footerSubtitle {
+          font-size: 2.084vw;
+          line-height: 3.125vw;
+          margin: 13.021vw 0 0 0;
+          gap: 0.781vw;
+        }
+      }
+      .footerMail {
+        font-size: 3.645vw;
+        line-height: 4.427vw;
+        gap: 1.563vw;
+        img {
+          width: 3.907vw;
+        }
+      }
+    }
+    .socialContainer {
+      .socialLeftBlock {
+        gap: 1.953vw;
+        flex-direction: column;
+        span {
+          font-size: 1.563vw;
+          line-height: 1.953vw;
+        }
+      }
+      .socialLogo {
+        width: 22.656vw;
+      }
+      .social {
+        gap: 1.953vw;
+        a {
+          svg {
+            width: 4.427vw;
+          }
+        }
+      }
+    }
+  }
+}

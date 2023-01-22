@@ -215,14 +215,98 @@
   }
 }
 
+@media only screen and (max-width: 860px) {
+  .story {
+    &::before {
+      height: 32.552vw;
+    }
+    .storyContainer {
+      flex-direction: column;
+      padding: 0 0 13.021vw 0;
+      .storyLeftBlock {
+        position: static;
+        width: 100%;
+        .stone {
+          left: -19vw;
+          top: auto;
+          bottom: 0;
+          width: 88.281vw;
+        }
+        .storyTitle {
+          font-size: 4.948vw;
+          line-height: 6.25vw;
+        }
+        .storySubtitle {
+          position: absolute;
+          bottom: 24.74vw;
+          left: 0;
+          font-size: 2.344vw;
+          line-height: 3.646vw;
+          width: 32.552vw;
+          margin: 0 0 0 5.208vw;
+          img {
+            width: 5.921vw;
+            bottom: 0.781vw;
+            right: 11vw;
+          }
+        }
+      }
+      .storyRightBlock {
+        margin: 5.208vw 0 0 auto;
+        width: 56.12vw;
+        height: 72.005vw;
+        padding: 11.719vw 3.907vw 11.459vw 5.208vw;
+        position: relative;
+        &::before {
+          width: 50.319vw;
+          height: 64.379vw;
+          filter: blur(3.385vw);
+        }
+        img {
+          top: -7.552vw;
+          left: -3.516vw;
+          width: 84.505vw;
+        }
+
+        .description {
+          padding: 0 2.604vw 0 0;
+          gap: 2.723vw;
+          p {
+            font-size: 1.823vw;
+            line-height: 2.604vw;
+          }
+          &::-webkit-scrollbar {
+            width: 0.277vw;
+          }
+
+          &::-webkit-scrollbar-track {
+            background-color: #07031f30;
+            border-radius: 0.556vw;
+          }
+          &::-webkit-scrollbar-thumb {
+            box-shadow: inset 0 0 0.417vw #07031f;
+            border-radius: 0.556vw;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (min-aspect-ratio: 1920 / 860) and (min-width: 1281px) {
   .story {
     height: 50.521vw;
   }
 }
 
-@media only screen and (min-aspect-ratio: 1024 / 768) and (min-width: 601px) {
+@media only screen and (min-aspect-ratio: 1024 / 768) and (min-width: 861px) and (max-width: 1280px)  {
   .story {
     height: 67.188vw;
+  }
+}
+
+@media only screen and (min-aspect-ratio: 768 / 800) and (min-width: 601px) and (max-width: 860px) {
+  .story {
+    height: 117.188vw;
   }
 }

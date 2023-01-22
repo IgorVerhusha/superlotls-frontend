@@ -22,8 +22,11 @@ const AboutSection = () => {
     if (screen.width >= 1281) {
       countVw(19.2, 0.1);
     }
-    if (screen.width >= 601) {
+    if (screen.width >= 861) {
       countVw(10.24, 0.0867);
+    }
+    if (screen.width >= 601) {
+      countVw(7.68, 0.08);
     }
     setSlideIndex(0);
     setSlideWidth(slideWidth)
@@ -57,8 +60,8 @@ const AboutSection = () => {
         <h1 className={styles.aboutTitle}>About</h1>
         <p className={styles.aboutSubtitle}>
           Committed to creative expression, Superlotl by Inkbox merges Web2
-          and Web3 with an impactful, utility-driven initiative. Defined as
-          identity celebrators, Inkbox produces artist-designed semi-permanent
+          and Web3 with an impactful, utility-driven initiative. <br />
+          Defined as identity celebrators, Inkbox produces artist-designed semi-permanent
           tattoos and has collaborated with expression icons.
         </p>
         <span className={styles.aboutDescription}>Here are some of them ...</span>
