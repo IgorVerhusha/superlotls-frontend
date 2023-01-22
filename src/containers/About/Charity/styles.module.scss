@@ -210,6 +210,63 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .charity {
+    height: auto;
+    padding: 24vw 0 0 0;
+    .charityAxolots1 {
+      bottom: 10.667vw;
+      left: 5.333vw;
+      width: 20.267vw;
+    }
+    .charityAxolots2 {
+      bottom: 4.533vw;
+      left: 27.199vw;
+      width: 32.533vw;
+    }
+    .heartContainer {
+      bottom: 10.4vw;
+      top: auto;
+      left: auto;
+      right: -3.2vw;
+      width: 99.734vw;
+      height: 95.734vw;
+      transform: scale(0.6);
+      transform-origin: right;
+      .heartWrapper {
+        .heart {
+          left: 4.907vw;
+          top: 4.266vw;
+          width: 89.33vw;
+        }
+        .planet {
+          right: 0.641vw;
+          top: 12.906vw;
+          width: 82.025vw;
+        }
+      }
+    }
+    .charityContainer {
+      flex-direction: column;
+      padding: 0 0 75.467vw 0;
+      .charityTitle {
+        font-size: 7.467vw;
+        line-height: 10.133vw;
+      }
+      .charitySubtitleWrapper {
+        padding: 0;
+        width: 100%;
+        gap: 6.666vw;
+        margin: 5.333vw 0 0 0;
+        p {
+          font-size: 4vw;
+          line-height: 6.4vw;
+        }
+      }
+    }
+  }
+}
+
 
 @media only screen and (min-aspect-ratio: 1920 / 860) and (min-width: 1281px) {
   .charity {

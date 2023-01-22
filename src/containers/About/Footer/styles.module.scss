@@ -231,3 +231,64 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .footer {
+    overflow: hidden;
+    gap: 32vw;
+    padding: 24vw 0 12vw 0;
+    .footerBg {
+      height: 133.333vw;
+      object-fit: cover;
+    }
+    .footerContainer {
+      .footerLeftBlock {
+        .footerTitle {
+          font-size: 7.467vw;
+          line-height: 10.133vw;
+        }
+        .footerSubtitle {
+          font-size: 3.733vw;
+          line-height: 6.4vw;
+          margin: 26.667vw 0 0 0;
+          gap: 1.599vw;
+        }
+      }
+      .footerMail {
+        font-size: 5.867vw;
+        line-height: 7.2vw;
+        gap: 2.667vw;
+        img {
+          width: 6.667vw;
+        }
+      }
+    }
+    .socialContainer {
+      flex-direction: column;
+      .socialLeftBlock {
+        gap: 4vw;
+        flex-direction: column;
+        span {
+          font-size: 3.201vw;
+          line-height: 4vw;
+        }
+      }
+      .socialLogo {
+        margin: 13.333vw 0 0 0;
+        width: 46.399vw;
+      }
+      .social {
+        right: 0;
+        left: auto;
+        top: 0%;
+        gap: 4vw;
+        transform: translate(0%, 15%);
+        a {
+          svg {
+            width: 9.066vw;
+          }
+        }
+      }
+    }
+  }
+}

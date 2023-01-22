@@ -409,6 +409,113 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .about {
+    height: auto;
+    padding: 32vw 0 0 0;
+    .aboutBg {
+      width: 150%;
+    }
+    .logoBg {
+      top: 22.667vw;
+      right: 5.333vw;
+      width: 41.867vw;
+    }
+    .aboutContainer {
+      .aboutTitle {
+        font-size: 10.133vw;
+        line-height: 12.8vw;
+      }
+      .aboutSubtitle {
+        margin: 2.666vw 0 0 0;
+        width: 100%;
+        font-size: 4vw;
+        line-height: 6.4vw;
+      }
+      .aboutDescription {
+        margin: 7.999vw 0 0 0;
+        font-size: 4vw;
+        line-height: 6.4vw;
+      }
+      .aboutSliderWrapper {
+        margin: 7.999vw 0 0 0;
+        gap: 13.333vw;
+        .slider {
+          width: 100%;
+          position: relative;
+          justify-content: space-between;
+          .buttonPrev,
+          .buttonNext {
+            position: absolute;
+            left: 50%;
+            top: auto;
+            bottom: 0;
+            width: 14.934vw;
+            height: 6.4vw;
+            border: 1px solid #ffffff;
+            border-radius: 2.134vw;
+            transform: none;
+            img {
+              width: 9.066vw;
+              height: 2.666vw;
+            }
+            &:hover {
+              border: 1px solid #ff66c4;
+            }
+            &.inactive {
+              &:hover {
+                border: 1px solid #ffffff;
+              }
+            }
+          }
+          .buttonNext {
+            transform: translate(1.333vw, calc(100% + 5.333vw));
+            img {
+              transform: rotate(180deg);
+            }
+          }
+          .buttonPrev {
+            transform: translate(calc(-100% - 1.333vw), calc(100% + 20px));
+          }
+
+          .slideContainer {
+            width: 100%;
+            overflow: visible;
+            .slideWrapper {
+              gap: 2.134vw;
+              .slide {
+                width: 29.866vw;
+                height: 29.866vw;
+                padding: 0 3.201vw 3.201vw 3.201vw;
+                border-radius: 1.849vw 1.849vw 0 0;
+                span {
+                  font-size: 3.005vw;
+                  line-height: 5.067vw;
+                }
+                &.active {
+                  width: 37.867vw;
+                  height: 37.867vw;
+                  span {
+                    transform: scale(1.26);
+                  }
+                }
+              }
+            }
+          }
+        }
+        .sliderDescription {
+          width: 100%;
+          margin: 10.667vw 0 0 0;
+          p {
+            font-size: 4.266vw;
+            line-height: 6.4vw;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (min-aspect-ratio: 1920 / 860) and (min-width: 1281px) {
   .about {
     height: 50.521vw;

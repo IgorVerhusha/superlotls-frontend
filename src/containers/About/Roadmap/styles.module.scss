@@ -404,6 +404,55 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .roadmap {
+    height: auto;
+    padding: 24vw 0 0 0;
+    .roadmapContainer {
+      .roadmap_Title {
+        font-size: 7.467vw;
+        line-height: 10.133vw;
+      }
+      .vr {
+        width: 250%;
+        transform: translateX(-30%);
+        margin: 6.667vw 0 21.333vw 0;
+        .code {
+          display: none;
+        }
+        .vrText {
+          width: 89.333vw;
+          gap: 4vw;
+          padding: 0 0 13.333vw 0;
+
+          p {
+            font-size: 4.266vw;
+            line-height: 6.4vw;
+          }
+        }
+        .roadmapNavigation {
+          gap: 5.333vw;
+          .navigationButtonContainer {
+            gap: 6.4vw;
+            .backgroundButton {
+              border-radius: 1.599vw;
+            }
+            .navigationButton {
+              padding: 1.067vw 1.333vw;
+              font-size: 4.266vw;
+              line-height: 4.266vw;
+              border-radius: 1.599vw;
+            }
+          }
+          .navigationLine {
+            width: 68%;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (min-aspect-ratio: 1920 / 860) and (min-width: 1281px) {
   .roadmap {
     height: 50.521vw;

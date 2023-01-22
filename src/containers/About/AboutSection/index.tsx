@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { TouchEvent, useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
 import { ABOUT_SLIDES } from '@constants/about-page';
 import LogoBg from 'public/assets/img/about/main/logo-bg.png';
@@ -12,6 +12,28 @@ const AboutSection = () => {
   const [slideWidth, setSlideWidth] = useState(0);
   const [translateWidth, setTranslateWidth] = useState(0);
   const [vw, setVw] = useState<number>();
+  const [touchPosition, setTouchPosition] = useState<number>();
+
+  const handleTouchStart = (e: TouchEvent) => {
+    const touchDown = e.touches[0].clientX;
+    setTouchPosition(touchDown);
+  };
+
+  const handleTouchMove = (e: TouchEvent) => {
+    const touchDown = touchPosition;
+    if (touchDown === undefined) {
+      return;
+    }
+    const currentTouch = e.touches[0].clientX;
+    const diff = touchDown - currentTouch;
+    if (diff > 5) {
+      nextSlide();
+    }
+    if (diff < -5) {
+      prevSlide();
+    }
+    setTouchPosition(undefined);
+  };
 
   function countVw(a: number, b: number) {
     setVw((screen.width / a) * b);
@@ -19,6 +41,7 @@ const AboutSection = () => {
   }
 
   const countVwDesktop = () => {
+    setSlideIndex(0);
     if (screen.width >= 1281) {
       countVw(19.2, 0.1);
     }
@@ -28,8 +51,12 @@ const AboutSection = () => {
     if (screen.width >= 601) {
       countVw(7.68, 0.08);
     }
-    setSlideIndex(0);
-    setSlideWidth(slideWidth)
+    if (screen.width <= 600) {
+      countVw(3.1, 0.0824);
+      setSlideWidth(slideWidth - 90)
+      return
+    }
+    setSlideWidth(0);
   };
 
   useEffect(() => {
@@ -54,8 +81,8 @@ const AboutSection = () => {
 
   return (
     <section className={styles.about}>
-      <img src={LogoBg.src} alt="" className={styles.logoBg}/>
-      <img src={AboutBg.src} alt="" className={styles.aboutBg}/>
+      <img src={LogoBg.src} alt="" className={styles.logoBg} />
+      <img src={AboutBg.src} alt="" className={styles.aboutBg} />
       <div className={cn(styles.aboutContainer, mainStyles.container)}>
         <h1 className={styles.aboutTitle}>About</h1>
         <p className={styles.aboutSubtitle}>
@@ -71,14 +98,15 @@ const AboutSection = () => {
               className={cn(styles.buttonPrev, { [styles.inactive]: slideIndex === 0 })}
               onClick={prevSlide}
             >
-              <img src="assets/img/about/main/arrow.svg" alt=""/>
+              <img src="assets/img/about/main/arrow.svg" alt="" />
             </button>
-            <div className={styles.slideContainer}>
-              <div className={styles.slideWrapper} ref={slides} style={{ transform: `translateX(${slideWidth}px)` }}>
+            <div className={styles.slideContainer} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
+              <div className={styles.slideWrapper} ref={slides}
+                style={{ transform: `translateX(${slideWidth}px)` }}>
                 {ABOUT_SLIDES.map(({ src, title }, index) => (<div
                   key={title}
                   className={cn(styles.slide, { [styles.active]: index === slideIndex + 1 || index === slideIndex + 2 })}>
-                  <img src={src} alt=""/>
+                  <img src={src} alt="" />
                   <span>{title}</span>
                 </div>))}
               </div>
@@ -87,7 +115,7 @@ const AboutSection = () => {
               className={cn(styles.buttonNext, { [styles.inactive]: slideIndex === ABOUT_SLIDES.length - 4 })}
               onClick={nextSlide}
             >
-              <img src="assets/img/about/main/arrow.svg" alt=""/>
+              <img src="assets/img/about/main/arrow.svg" alt="" />
             </button>
           </div>
           <div className={styles.sliderDescription}>
