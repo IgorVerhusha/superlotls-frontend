@@ -8,6 +8,7 @@ import Story from '@containers/About/Story';
 import Footer from '@containers/About/Footer';
 import styles from './styles.module.scss';
 
+
 const AboutPage = () => {
   const [showNav, setShowNav] = useState(false);
   return (

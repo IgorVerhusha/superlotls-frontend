@@ -1,0 +1,151 @@
+.footer {
+  width: 100%;
+  position: absolute;
+  gap: 12.5vw;
+  bottom: 0;
+  left: 0;
+  padding: 0 0 2.604vw 0;
+  .socialContainer {
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    bottom: 0;
+    .socialLeftBlock {
+      opacity: 0;
+      display: flex;
+      gap: 2.083vw;
+      span {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 0.625vw;
+        line-height: 0.781vw;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+    }
+    .socialLogo {
+      width: 9.063vw;
+      height: auto;
+    }
+    .social {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      gap: 1.042vw;
+      a {
+        text-decoration: none;
+        svg {
+          display: block;
+          width: 2.083vw;
+          height: auto;
+          circle {
+            transition: 0.35s fill;
+          }
+        }
+        &:hover {
+          svg {
+            circle {
+              fill: #ff66c4;
+            }
+            path {
+              fill: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .footer {
+    gap: 14.648vw;
+    padding: 0 0 5.859vw 0;
+    .socialContainer {
+      .socialLeftBlock {
+        gap: 3.906vw;
+        span {
+          font-size: 1.172vw;
+          line-height: 1.465vw;
+        }
+      }
+      .socialLogo {
+        width: 16.992vw;
+      }
+      .social {
+        gap: 1.465vw;
+        a {
+          svg {
+            width: 3.32vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .footer {
+    gap: 13.021vw;
+    padding: 13.021vw 0 7.812vw 0;
+    .socialContainer {
+      .socialLeftBlock {
+        gap: 1.953vw;
+        flex-direction: column;
+        span {
+          font-size: 1.563vw;
+          line-height: 1.953vw;
+        }
+      }
+      .socialLogo {
+        width: 22.656vw;
+      }
+      .social {
+        gap: 1.953vw;
+        a {
+          svg {
+            width: 4.427vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .footer {
+    padding: 24vw 0 12vw 0;
+    .socialContainer {
+      flex-direction: column;
+      .socialLeftBlock {
+        gap: 4vw;
+        flex-direction: column;
+        span {
+          font-size: 3.201vw;
+          line-height: 4vw;
+        }
+      }
+      .socialLogo {
+        margin: 13.333vw 0 0 0;
+        width: 46.399vw;
+      }
+      .social {
+        right: 0;
+        left: auto;
+        top: 0%;
+        gap: 4vw;
+        transform: translate(0%, 15%);
+        a {
+          svg {
+            width: 9.066vw;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,280 @@
+.wrapper {
+  width: 100%;
+  height: auto;
+  background-color: #03010d;
+  overflow: hidden;
+  position: relative;
+}
+.container {
+  width: 76.458vw;
+  margin: 0 auto;
+}
+
+.overflowHidden {
+  height: 100vh;
+}
+
+.mint {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .animeCircle {
+    position: absolute;
+    top: 15%;
+    right: 7.76vw;
+    .wrapperCircle {
+      width: 38.177vw;
+      height: 38.177vw;
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .mintBg {
+    position: absolute;
+    top: 0;
+    left: 22.76vw;
+    height: 100%;
+    width: auto;
+    z-index: 1;
+  }
+  .mintContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .mintRightBlock {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      z-index: 1;
+      gap: 2.24vw;
+      .mintTitle {
+        font-family: "Wild World";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 3.542vw;
+        line-height: 4.583vw;
+        color: #ffffff;
+        width: 27.448vw;
+      }
+      .mintTextContainer {
+        width: 26.042vw;
+        display: flex;
+        flex-direction: column;
+        gap: 1.406vw;
+        .mintText {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 0.938vw;
+          line-height: 1.354vw;
+          letter-spacing: -0.02em;
+          color: #ffffff;
+        }
+      }
+      .mintBtn {
+        margin: 0.26vw 0 0 0;
+        padding: 0;
+        width: 12.917vw;
+        height: 3.438vw;
+        background: #171d27;
+        border-radius: 0.417vw;
+        border: none;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 0.938vw;
+        line-height: 0.938vw;
+        text-align: center;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .container {
+    width: 92.188vw;
+  }
+
+  .mint {
+    .mintBg {
+      left: 22.656vw;
+      height: 81%;
+      top: 7.715vw;
+    }
+    .animeCircle {
+      right: -1.953vw;
+      top: 10%;
+      .wrapperCircle {
+        width: 46.582vw;
+        height: 46.582vw;
+      }
+    }
+    .mintContainer {
+      transform: translateY(-3%);
+      z-index: 2;
+      .mintRightBlock {
+
+        gap: 3.906vw;
+        .mintTitle {
+          font-size: 4.688vw;
+          line-height: 6.641vw;
+          width: 22.754vw;
+        }
+        .mintTextContainer {
+          width: 36.719vw;
+          gap: 2.441vw;
+          .mintText {
+            font-size: 1.563vw;
+            line-height: 2.344vw;
+          }
+        }
+        .mintBtn {
+          margin: 0.488vw 0 0 0;
+          width: 20.508vw;
+          height: 5.859vw;
+          border-radius: 0.781vw;
+          font-size: 1.758vw;
+          line-height: 1.758vw;
+        }
+      }
+
+    }
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .container {
+    width: 89.583vw;
+  }
+  .mint {
+    .mintBg {
+      top: 12.891vw;
+      left: -11.589vw;
+      height: 67%;
+    }
+    .animeCircle {
+      right: -2.604vw;
+      top: 8%;
+      .wrapperCircle {
+        width: 57.292vw;
+        height: 57.292vw;
+      }
+    }
+    .mintContainer {
+      transform: translateY(-3%);
+
+      .mintRightBlock {
+        gap: 5.208vw;
+        width: 100%;
+        .mintTitle {
+          font-size: 6.25vw;
+          line-height: 8.854vw;
+          width: 30.339vw;
+        }
+        .mintTextContainer {
+          margin: 24.87vw 0 0 auto;
+          width: 42.057vw;
+          gap: 2.083vw;
+          .mintText {
+            font-size: 2.083vw;
+            line-height: 3.125vw;
+          }
+        }
+        .mintBtn {
+          margin: 0 14.583vw 0 auto;
+          width: 27.344vw;
+          height: 7.813vw;
+          border-radius: 1.042vw;
+          font-size: 2.344vw;
+          line-height: 2.344vw;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 89.333vw;
+  }
+  .mint {
+    height: 285.333vw;
+    align-items: flex-start;
+    .mintBg {
+      top: 12.533vw;
+      left: 6.4vw;
+      height: 80%;
+    }
+    .animeCircle {
+      right: 18.667vw;
+      top: 20%;
+      .wrapperCircle {
+        width: 89.333vw;
+        height: 89.333vw;
+      }
+    }
+    .mintContainer {
+      padding: 37.333vw 0 0 0;
+      .mintRightBlock {
+        gap: 10.667vw;
+        width: 100%;
+        .mintTitle {
+          font-size: 10.133vw;
+          line-height: 12.8vw;
+          width: 80vw;
+        }
+        .mintTextContainer {
+          margin: 74.133vw 0 0 0;
+          width: 100%;
+          gap: 4vw;
+          .mintText {
+            font-size: 4.267vw;
+            line-height: 6.4vw;
+          }
+        }
+        .mintBtn {
+          margin: 0;
+          width: 48vw;
+          height: 14.4vw;
+          border-radius: 2.133vw;
+          font-size: 4.267vw;
+          line-height: 4.8vw;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-aspect-ratio: 1920 / 860) and (min-width: 1281px) {
+  .mint {
+    height: 50.521vw;
+  }
+}
+
+@media only screen and (min-aspect-ratio: 1024 / 768) and (min-width: 861px) and (max-width: 1280px) {
+  .mint {
+    height: 75vw;
+  }
+}
+
+@media only screen and (min-aspect-ratio: 768 / 950) and (min-width: 601px) and (max-width: 860px) {
+  .mint {
+    height: 133.333vw;
+  }
+}
