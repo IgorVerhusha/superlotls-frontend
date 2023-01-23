@@ -52,7 +52,7 @@ const AboutSection = () => {
       countVw(7.68, 0.08);
     }
     if (screen.width <= 600) {
-      countVw(3.1, 0.0824);
+      countVw(3.75, 0.0824);
       setSlideWidth(slideWidth - 90)
       return
     }
@@ -66,14 +66,14 @@ const AboutSection = () => {
   }, []);
 
   const prevSlide = () => {
-    if (slideIndex >= 1) {
+    if (slideIndex >= 0) {
       setSlideWidth(slideWidth + translateWidth + (vw || 0));
       setSlideIndex(slideIndex - 1);
     }
   };
 
   const nextSlide = () => {
-    if (slideIndex < ABOUT_SLIDES.length - 4) {
+    if (slideIndex < ABOUT_SLIDES.length - 3) {
       setSlideWidth(slideWidth - translateWidth - (vw || 0));
       setSlideIndex(slideIndex + 1);
     }
@@ -95,7 +95,7 @@ const AboutSection = () => {
         <div className={styles.aboutSliderWrapper}>
           <div className={styles.slider}>
             <button
-              className={cn(styles.buttonPrev, { [styles.inactive]: slideIndex === 0 })}
+              className={cn(styles.buttonPrev, { [styles.inactive]: slideIndex <= -1 })}
               onClick={prevSlide}
             >
               <img src="assets/img/about/main/arrow.svg" alt="" />
@@ -112,7 +112,7 @@ const AboutSection = () => {
               </div>
             </div>
             <button
-              className={cn(styles.buttonNext, { [styles.inactive]: slideIndex === ABOUT_SLIDES.length - 4 })}
+              className={cn(styles.buttonNext, { [styles.inactive]: slideIndex >= ABOUT_SLIDES.length - 3 })}
               onClick={nextSlide}
             >
               <img src="assets/img/about/main/arrow.svg" alt="" />

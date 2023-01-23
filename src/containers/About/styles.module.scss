@@ -3,12 +3,17 @@
   height: auto;
   background-color: #0d4b9e;
   overflow: hidden;
+  position: relative;
 }
 .container {
   width: 76.458vw;
   margin: 0 auto;
 }
 
+.overflowHidden {
+  height: 100vh;
+  overflow: hidden;
+}
 
 @media only screen and (max-width: 1280px) {
   .container {

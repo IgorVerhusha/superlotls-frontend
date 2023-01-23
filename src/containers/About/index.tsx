@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import cn from 'classnames';
 import Header from '@components/Header';
 import AboutSection from '@containers/About/AboutSection';
 import Charity from '@containers/About/Charity';
@@ -8,9 +9,10 @@ import Footer from '@containers/About/Footer';
 import styles from './styles.module.scss';
 
 const AboutPage = () => {
+  const [showNav, setShowNav] = useState(false);
   return (
-    <div className={styles.wrapper}>
-      <Header />
+    <div className={cn(styles.wrapper, { [styles.overflowHidden]: showNav })}>
+      <Header showNav={showNav} setShowNav={setShowNav} />
       <AboutSection />
       <Charity />
       <Roadmap />

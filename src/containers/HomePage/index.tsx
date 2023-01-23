@@ -15,6 +15,7 @@ import styles from './styles.module.scss';
 
 const HomePage: FC = () => {
     const [pageIsInit, setPageIsInit] = useState(false);
+    const [showNav, setShowNav] = useState(false);
     const beginningSection = useRef<HTMLDivElement>(null);
 
     const handleExecuteScroll = () => {
@@ -29,22 +30,22 @@ const HomePage: FC = () => {
           pageIsInit={pageIsInit}
           setPageIsInit={setPageIsInit}
         />
-        <div className={cn(styles.wrapper, {[styles.isLoading]: !pageIsInit})}>
-          <Header />
-          <HomePageMain onExecuteScroll={handleExecuteScroll}/>
+        <div className={cn(styles.wrapper, { [styles.overflowHidden]: !pageIsInit || showNav })}>
+          <Header showNav={showNav} setShowNav={setShowNav} />
+          <HomePageMain onExecuteScroll={handleExecuteScroll} />
           <BeginningHomePage
             beginningSectionRef={beginningSection}
           />
           <div className={styles.fadeWrapper}>
             <MintWaterway />
-            <Slider/>
+            <Slider />
             <footer className={styles.footerContainer}>
-              <img src={footer.src} alt="" className={styles.footerBackground}/>
-              <img src={light.src} alt="" className={styles.footerLight}/>
+              <img src={footer.src} alt="" className={styles.footerBackground} />
+              <img src={light.src} alt="" className={styles.footerLight} />
               <div className={styles.container}>
                 <div className={styles.faq}>
                   <h2 className={styles.mainTitle}>Faq</h2>
-                  <Accordion accordionItems={ACCORDION_ITEMS}/>
+                  <Accordion accordionItems={ACCORDION_ITEMS} />
                 </div>
                 <div className={styles.footer}>
                   <div className={styles.joinTop}>
@@ -52,22 +53,22 @@ const HomePage: FC = () => {
                     <span className={styles.fMainTitle}>The</span>
                   </div>
                   <div className={styles.joinBot}>
-                    <img src="/assets/img/home-page/footer/footer-arrow.svg" alt=""/>
+                    <img src="/assets/img/home-page/footer/footer-arrow.svg" alt="" />
                     <span className={styles.fMainTitle}>Superherd</span>
                   </div>
 
                   <div className={styles.socials}>
                     <a href="https://twitter.com/superlotls" className={styles.btn}
                     ><img src="/assets/img/home-page/footer/twitter-logo.svg"
-                                           alt=""/><span>twitter</span></a
+                      alt="" /><span>twitter</span></a
                     >
                     <a href="https://www.instagram.com/superlotls/" className={styles.btn}
                     >
-                      <img src="/assets/img/home-page/footer/instagram-logo.svg" alt=""/><span>instagram</span></a
+                      <img src="/assets/img/home-page/footer/instagram-logo.svg" alt="" /><span>instagram</span></a
                     >
                     <a href="https://discord.gg/8aTE9GTsAT" className={styles.btn}
                     ><img src="/assets/img/home-page/footer/discord-logo.svg"
-                                           alt=""/><span>discord</span></a
+                      alt="" /><span>discord</span></a
                     >
                   </div>
 
@@ -78,7 +79,7 @@ const HomePage: FC = () => {
                     </div>
                     <div className={styles.powered}>
                       <a href="https://www.niftables.com/" rel="noreferrer" className={styles.powered} target="_blank">
-                        <img src="/assets/img/home-page/footer/poweredby.svg" alt="powered by niftables"/>
+                        <img src="/assets/img/home-page/footer/poweredby.svg" alt="powered by niftables" />
                       </a>
                     </div>
                   </div>
