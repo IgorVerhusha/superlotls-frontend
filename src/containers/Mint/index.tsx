@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import cn from 'classnames';
 import Header from '@components/Header';
-import Footer from '@components/Footer';
+import Footer from './Footer';
 import mintBg from 'public/assets/img/home-page/mint/mint-bg.png';
 import styles from './styles.module.scss';
 
