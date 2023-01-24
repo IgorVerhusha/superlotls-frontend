@@ -8,11 +8,11 @@ import styles from './styles.module.scss';
 
 const AboutSection = () => {
   const slides = useRef<HTMLDivElement>(null);
-  const [slideIndex, setSlideIndex] = useState(0);
-  const [slideWidth, setSlideWidth] = useState(0);
+  const [slideIndex, setSlideIndex] = useState(1);
   const [translateWidth, setTranslateWidth] = useState(0);
   const [vw, setVw] = useState<number>();
   const [touchPosition, setTouchPosition] = useState<number>();
+  const [isMobile, setIsMobile] = useState(false);
 
   const handleTouchStart = (e: TouchEvent) => {
     const touchDown = e.touches[0].clientX;
@@ -37,26 +37,29 @@ const AboutSection = () => {
 
   function countVw(a: number, b: number) {
     setVw((screen.width / a) * b);
-    setTranslateWidth(slides.current?.children[0].clientWidth as number);
   }
 
   const countVwDesktop = () => {
-    setSlideIndex(0);
+    setSlideIndex(1);
+    setTranslateWidth(0);
+    setIsMobile(false);
     if (screen.width >= 1281) {
       countVw(19.2, 0.1);
+      return;
     }
     if (screen.width >= 861) {
       countVw(10.24, 0.0867);
+      return;
     }
     if (screen.width >= 601) {
       countVw(7.68, 0.08);
+      return;
     }
     if (screen.width <= 600) {
       countVw(3.75, 0.0824);
-      setSlideWidth(slideWidth - 90)
+      setIsMobile(true);
       return
     }
-    setSlideWidth(0);
   };
 
   useEffect(() => {
@@ -65,16 +68,18 @@ const AboutSection = () => {
     return () => window.removeEventListener('resize', countVwDesktop);
   }, []);
 
+
+  const slideWidth = (slides.current?.children[0].clientWidth || 0);
   const prevSlide = () => {
-    if (slideIndex >= 0) {
-      setSlideWidth(slideWidth + translateWidth + (vw || 0));
+    if (slideIndex > (isMobile ? 0 : 1)) {
+      setTranslateWidth(slideWidth + translateWidth + (vw || 0));
       setSlideIndex(slideIndex - 1);
     }
   };
 
   const nextSlide = () => {
-    if (slideIndex < ABOUT_SLIDES.length - 3) {
-      setSlideWidth(slideWidth - translateWidth - (vw || 0));
+    if (slideIndex <= ABOUT_SLIDES.length - (isMobile ? 3 : 4)) {
+      setTranslateWidth(translateWidth - slideWidth - (vw || 0));
       setSlideIndex(slideIndex + 1);
     }
   };
@@ -95,24 +100,24 @@ const AboutSection = () => {
         <div className={styles.aboutSliderWrapper}>
           <div className={styles.slider}>
             <button
-              className={cn(styles.buttonPrev, { [styles.inactive]: slideIndex <= -1 })}
+              className={cn(styles.buttonPrev, { [styles.inactive]:  slideIndex <= (isMobile ? 0 : 1)  })}
               onClick={prevSlide}
             >
               <img src="assets/img/about/main/arrow.svg" alt="" />
             </button>
             <div className={styles.slideContainer} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
               <div className={styles.slideWrapper} ref={slides}
-                style={{ transform: `translateX(${slideWidth}px)` }}>
+                style={{ transform: `translateX(${translateWidth - (isMobile ? 100 : 0)}px)` }}>
                 {ABOUT_SLIDES.map(({ src, title }, index) => (<div
                   key={title}
-                  className={cn(styles.slide, { [styles.active]: index === slideIndex + 1 || index === slideIndex + 2 })}>
+                  className={cn(styles.slide, { [styles.active]: index === slideIndex || index === slideIndex + 1 })}>
                   <img src={src} alt="" />
                   <span>{title}</span>
                 </div>))}
               </div>
             </div>
             <button
-              className={cn(styles.buttonNext, { [styles.inactive]: slideIndex >= ABOUT_SLIDES.length - 3 })}
+              className={cn(styles.buttonNext, { [styles.inactive]: slideIndex > ABOUT_SLIDES.length - (isMobile ? 3 : 4)})}
               onClick={nextSlide}
             >
               <img src="assets/img/about/main/arrow.svg" alt="" />

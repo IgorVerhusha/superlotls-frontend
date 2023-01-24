@@ -42,6 +42,7 @@ const SuperversePage = () => {
   const [translateWidth, setTranslateWidth] = useState(0);
   const [vw, setVw] = useState<number>();
   const [touchPosition, setTouchPosition] = useState<number>();
+  const [isMobile, setIsMobile] = useState(false);
 
   const handleTouchStart = (e: TouchEvent) => {
     const touchDown = e.touches[0].clientX;
@@ -72,6 +73,7 @@ const SuperversePage = () => {
     setSlideWidth(slides.current?.children[0].clientWidth as number);
     setTranslateWidth(0);
     setSlideIndex(0);
+    setIsMobile(false);
     if (screen.width >= 1281) {
       countVw(19.2, 0.2);
       return;
@@ -86,6 +88,7 @@ const SuperversePage = () => {
     }
     if (screen.width <= 600) {
       countVw(3.75, 0.1814);
+      setIsMobile(true);
       return;
     }
   };
@@ -103,7 +106,7 @@ const SuperversePage = () => {
   };
 
   const nextSlide = () => {
-    if (slideIndex >= SLIDES.length - 3) return;
+    if (slideIndex >= SLIDES.length - (isMobile ? 1 : 3)) return;
     setTranslateWidth(translateWidth - slideWidth - (vw || 0));
     setSlideIndex(slideIndex + 1);
   };
@@ -119,12 +122,12 @@ const SuperversePage = () => {
             <button className={cn(styles.buttonPrev, { [styles.inactive]: slideIndex === 0 })} onClick={prevSlide}>
               <img src="assets/img/about/main/arrow.svg" alt="" />
             </button>
-            <button className={cn(styles.buttonNext, { [styles.inactive]: slideIndex >= SLIDES.length - 3 })}
+            <button className={cn(styles.buttonNext, { [styles.inactive]: slideIndex >= SLIDES.length - (isMobile ? 1 : 3) })}
               onClick={nextSlide}>
               <img src="assets/img/about/main/arrow.svg" alt="" />
             </button>
             <span className={styles.buttonText}>6 pages of history</span>
-            <div className={styles.slideContainer}>
+            <div className={styles.slideContainer} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
               <img src={lineLeft.src} alt="" className={styles.lineLeft} />
               <img src={lineLeft.src} alt="" className={styles.lineRight} />
               <div className={styles.slideWrapper} ref={slides}

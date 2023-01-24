@@ -43,7 +43,7 @@ const Slider = () => {
   };
 
   return (
-    <section className={styles.team}>
+    <section id="team" className={styles.team}>
       <img src={teamBackground.src} alt="" className={styles.teamBackground}/>
       <div className={styles.slider} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
         <div className={styles.sliderWrapper}>

@@ -3,6 +3,7 @@ import cn from 'classnames';
 import background from 'public/assets/img/about/footer/background.png';
 import styles from './styles.module.scss';
 import mainStyles from './../styles.module.scss';
+import Link from 'next/link';
 
 const Index = () => {
   return (
@@ -14,8 +15,8 @@ const Index = () => {
             Any Questions? Please Contact <img src="assets/img/about/footer/arrow.svg" alt="" />
           </h2>
           <strong className={styles.footerSubtitle}
-          >or send a DM to our founding team, we don’t bite!*a<a href="#"
-          >Check Team</a
+          >or send a DM to our founding team, we don’t bite!*<Link href="/#team"
+          >Check Team</Link
           ></strong
           >
         </div>
@@ -35,7 +36,7 @@ const Index = () => {
           <img src="assets/img/home-page/footer/poweredby.svg" alt="" className={styles.socialLogo} />
         </a>
         <div className={styles.social}>
-          <a href="https://discord.gg/8aTE9GTsAT" target="_blank" rel="noreferrer">
+          <a href="https://discord.gg/superlotls" target="_blank" rel="noreferrer">
             <svg
               width="40"
               height="40"

@@ -22,14 +22,13 @@ const NAVIGATIONS = [
 
 const Roadmap = () => {
   const stepsButtonsContainer = useRef<HTMLDivElement>(null);
-  const [isMounted, setIsMounted] = useState(false);
   const [buttonsBackground, setButtonBackground] = useState<number>();
   const [stepIndex, setStepIndex] = useState(0);
 
   useEffect(() => {
-    setButtonBackground(stepsButtonsContainer.current?.children[stepIndex + 1].clientWidth);
-    setIsMounted(true);
-  }, [isMounted]);
+    setButtonBackground(stepsButtonsContainer.current?.children[stepIndex + 1].clientWidth)
+    setTimeout(()=>setButtonBackground(stepsButtonsContainer.current?.children[stepIndex + 1].clientWidth), 300)
+  }, []);
 
   const changeStep = (step: number) => {
     setStepIndex(step);
@@ -69,36 +68,33 @@ const Roadmap = () => {
           />
           <img className={styles.road} src={road.src} alt="" />
           <img src={code.src} alt="" className={styles.code} />
-          <div className={cn(styles.vrText, styles.text1)}>
+          <div style={{zIndex: stepIndex === 0 ? 3 : 2}} className={cn(styles.vrText, styles.text1)}>
             <p>
-              5000 Superlotls hatch on the blockchain, each with a unique 1/1
-              tattoo.
+              5000 Superlotls hatch on the blockchain, each with high-quality 3D traits and a unique 1/1 tattoo.
             </p>
             <p>
-              All 5000 tattoos are live on <a href="inkbox.com">inkbox.com</a> and available for sale.
+              Tattoos are available for sale on <a href="https://inkbox.com/" rel="noreferrer" target="_blank">inkbox.com</a> Donations made to American Cancer Society.
             </p>
             <p>
-              Launch rewards like IRL pop-ups, air drops, merch and much more!
+              Rewards include Inkbox redeemables, tattoos and other giveaways, air drops, merch and much more!
             </p>
           </div>
           <div className={cn(styles.vrText, styles.text2)}>
-            <p>Ink the Metaverse.</p>
+            <p>Buy, sell, and collect up to 4 tattoos on your Superlotl via Tattoo Pack Drops.</p>
             <p>
-              Inkbox creates a virtual tattoo shop experience where you can
-              enter, engage and ink your avatar.
+              New collabs and partner announcements.
             </p>
             <p>
-              Choose top art from the Superlotl collection, or customize your
-              Metaverse avatar with unique 1/1 designs.
+              Ongoing rewards for holders, the longer you hold the better your Superloot chances. Community fund and empowering artist initiatives activated.
             </p>
             <p>
-              Attend virtual and IRL events and unlock creative expression in
-              the Metaverse and beyond!
+              Ink The Superverse: attend virtual tattoo shops and IRL events.
             </p>
           </div>
           <div className={cn(styles.vrText, styles.text3)}>
-            <p>What’s next for Inkbox in the Metaverse?</p>
-            <p>Stay tuned to find out!</p>
+            <p>Season 2 hatches on the blockchain.</p>
+            <p>Unlock creative expression in the Superverse and beyond!</p>
+            <p>What’s next for Superlotl by Inkbox? Stay tuned to find out!</p>
           </div>
           <div className={styles.roadmapNavigation}>
             <div ref={stepsButtonsContainer} className={styles.navigationButtonContainer}>

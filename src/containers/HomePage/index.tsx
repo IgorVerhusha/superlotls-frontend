@@ -66,7 +66,7 @@ const HomePage: FC = () => {
                     >
                       <img src="/assets/img/home-page/footer/instagram-logo.svg" alt="" /><span>instagram</span></a
                     >
-                    <a href="https://discord.gg/8aTE9GTsAT" className={styles.btn}
+                    <a href="https://discord.gg/superlotls" className={styles.btn}
                     ><img src="/assets/img/home-page/footer/discord-logo.svg"
                       alt="" /><span>discord</span></a
                     >

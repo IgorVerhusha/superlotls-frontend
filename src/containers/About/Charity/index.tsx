@@ -46,19 +46,14 @@ const Charity = () => {
           <p>
             All Superlotl tattoo designs will be available for purchase as an
             IRL semi-permanent tattoo on <a href="https://inkbox.com/" target="_blank" rel="noreferrer">inkbox.com</a>,
-            with proceeds donated to charitable organizations with every sale
-            (approximately 15% of sales price).
+            with proceeds donated to charitable organizations with every sale.
           </p>
           <p>
-            Season 1 is dedicated to supporting cancer research through <a href="#">American Cancer Society</a>.
+            Season 1 is dedicated to supporting cancer research through <a href="https://www.cancer.org/">American Cancer Society</a>.
             One of the axolotl’s IRL
             superpowers is that their genomes are 10x stronger than humans,
             making them remarkably insusceptible to cancer, and a natural fit
             to represent this initiative.
-          </p>
-          <p>
-            More updates on total impact raised and charity details coming
-            soon!
           </p>
         </div>
       </div>

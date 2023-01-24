@@ -124,7 +124,7 @@ export const ACCORDION_ITEMS = [
   },
   {
     title: `How do I join the whitelist?`,
-    content: <>Join our <a href="https://discord.gg/8aTE9GTsAT">Discord</a> and stay tuned for upcoming whitelist
+    content: <>Join our <a href="https://discord.gg/superlotls">Discord</a> and stay tuned for upcoming whitelist
       giveaways!
       There will be a lotl opportunities so be sure to get ready and join the Superlist early!</>
   },
