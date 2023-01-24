@@ -38,7 +38,7 @@ const HomePage: FC = () => {
           />
           <div className={styles.fadeWrapper}>
             <MintWaterway />
-            <Slider />
+            <Slider pageIsInit={pageIsInit} />
             <footer className={styles.footerContainer}>
               <img src={footer.src} alt="" className={styles.footerBackground} />
               <img src={light.src} alt="" className={styles.footerLight} />
